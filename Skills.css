@@ -773,5 +773,5 @@ header p {
 
     .breakdown-list { grid-template-columns: 1fr; }
     .breakdown-word { font-size: 0.9em; }
-    .breakdown-meaning { font-size: 0.8em; }
+    .breakdown-meaning { font-size: 0.85em; }
 }
