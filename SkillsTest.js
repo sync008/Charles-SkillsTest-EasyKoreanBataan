@@ -251,7 +251,7 @@ function displayCard() {
     // Show BACK of card
     const spokenText = card.spokenKorean || card.korean;
 
-    // Check if card has breakdown data (Reading Practice category)
+    // Vocabulary breakdown (Reading Practice)
     let breakdownHTML = "";
     if (card.breakdown && card.breakdown.length > 0) {
       breakdownHTML = '<div class="breakdown-section">';
@@ -283,62 +283,76 @@ function displayCard() {
       breakdownHTML += "</div></div>";
     }
 
-    // Grammar-rule cards (from the "grammarRules" category) carry a "usage" field
-    // that spells out which allomorph/form to use and when (patchim, vowel
-    // harmony, etc.) — show it as its own labeled section on the card back.
+    // Grammar usage
     let usageHTML = "";
     if (card.usage) {
       usageHTML = `
-                <div class="usage-section">
-                    <h3>Usage:</h3>
-                    <div class="usage-text">${card.usage}</div>
-                </div>
-            `;
+        <div class="usage-section">
+          <h3>Usage:</h3>
+          <div class="usage-text">${card.usage}</div>
+        </div>
+      `;
     }
+
+    // Answers: supports the new "answers" list and the old single "answer" field
+    const answers =
+      card.answers ||
+      (card.answer
+        ? [
+            {
+              korean: card.answer,
+              romanization: card.answerRomanization,
+              meaning: card.answerMeaning,
+            },
+          ]
+        : []);
 
     let answerHTML = "";
-    if (card.answer) {
+    if (answers.length > 0) {
       answerHTML = `
-                <div class="answer-section">
-                    <h3>Sample Answer:</h3>
-                    <div class="answer-korean">${card.answer}</div>
-                    ${card.answerRomanization ? `<div class="answer-romanization">${card.answerRomanization}</div>` : ""}
-                    ${card.answerMeaning ? `<div class="answer-meaning">${card.answerMeaning}</div>` : ""}
-                    <button class="replay-btn" id="replay-answer-btn">🔊 Play Answer</button>
-                </div>
-            `;
+        <div class="answer-section">
+          <h3>${answers.length > 1 ? "Sample Answers:" : "Sample Answer:"}</h3>
+          ${answers
+            .map(
+              (a) => `
+            <div class="answer-item">
+              <div class="answer-korean">${a.korean}</div>
+              ${a.romanization ? `<div class="answer-romanization">${a.romanization}</div>` : ""}
+              ${a.meaning ? `<div class="answer-meaning">${a.meaning}</div>` : ""}
+              <button class="replay-btn">🔊 Play Answer</button>
+            </div>`,
+            )
+            .join("")}
+        </div>
+      `;
     }
 
-    // Grammar-rule cards also carry chapter/title metadata - show it as a small
-    // badge above the Korean text, the same way multi-category mode shows
-    // "From: <category>".
+    // Badges
     let chapterBadgeHTML = "";
     if (card.chapter !== undefined && card.title) {
       chapterBadgeHTML = `<div class="source-category">Ch. ${card.chapter} — ${card.title}</div>`;
     }
 
-    // Show source category if from multi-category mode
     let sourceCategoryHTML = "";
     if (card.sourceCategory) {
       sourceCategoryHTML = `<div class="source-category">From: ${card.sourceCategory}</div>`;
     }
 
-    // Replace the cardContent.innerHTML in the isFlipped branch with:
     cardContent.innerHTML = `
-            <div class="card-back">
-                ${sourceCategoryHTML}
-                ${chapterBadgeHTML}
-                <div class="korean">${spokenText}</div>
-                <div class="romanization">${card.romanization}</div>
-                <div class="meaning">${card.meaning}</div>
-                ${usageHTML}
-                ${answerHTML}
-                ${breakdownHTML}
-                <button class="mark-hard-btn" id="mark-hard-btn">🔴 Mark as Hard</button>
-            </div>
-        `;
+      <div class="card-back">
+        ${sourceCategoryHTML}
+        ${chapterBadgeHTML}
+        <div class="korean">${spokenText}</div>
+        ${card.romanization ? `<div class="romanization">${card.romanization}</div>` : ""}
+        ${card.meaning ? `<div class="meaning">${card.meaning}</div>` : ""}
+        ${usageHTML}
+        ${answerHTML}
+        ${breakdownHTML}
+        <button class="mark-hard-btn" id="mark-hard-btn">🔴 Mark as Hard</button>
+      </div>
+    `;
 
-    // Attach the event right after setting innerHTML
+    // "Mark as Hard" button
     const markHardBtn = document.getElementById("mark-hard-btn");
     if (markHardBtn) {
       const hardWords = getHardWords();
@@ -357,18 +371,16 @@ function displayCard() {
       });
     }
 
-    // Attach the "Play Answer" button - this is the ONLY way the answer
-    // text gets spoken. It is never triggered automatically.
-    const replayBtn = document.getElementById("replay-answer-btn");
-    if (replayBtn) {
-      replayBtn.addEventListener("click", function (e) {
+    // "Play Answer" buttons - the ONLY way answers get spoken (never automatic)
+    cardContent.querySelectorAll(".replay-btn").forEach((btn, i) => {
+      btn.addEventListener("click", function (e) {
         e.stopPropagation(); // Don't flip the card
-        speakKorean(card.answer);
+        stopAutoPlay(); // don't let auto play talk over the answer
+        speakKorean(answers[i].korean.replace(/_+/g, " ")); // skip blanks
       });
-    }
+    });
 
-    // Speak the Korean text on the front/question only - the answer
-    // (if present) is intentionally NOT included here.
+    // Speak the question only
     const runId = autoPlayRunId;
     speakKorean(
       spokenText,
@@ -377,8 +389,8 @@ function displayCard() {
   } else {
     // Show FRONT of card
     cardContent.innerHTML = `
-            <div class="card-front">${card.korean}</div>
-        `;
+      <div class="card-front">${card.korean}</div>
+    `;
   }
 
   cardCounter.textContent = `${currentCardIndex + 1} / ${currentCards.length}`;
@@ -386,9 +398,15 @@ function displayCard() {
 }
 
 // SPEECH SYNTHESIS FUNCTION
+// SPEECH SYNTHESIS FUNCTION
+let speakTimer = null;
+
 function speakKorean(text, onEnd) {
-  // Cancel any ongoing speech
-  window.speechSynthesis.cancel();
+  if (!text) return;
+
+  const synth = window.speechSynthesis;
+  clearTimeout(speakTimer);
+  synth.cancel(); // Cancel any ongoing speech
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "ko-KR";
@@ -399,7 +417,8 @@ function speakKorean(text, onEnd) {
     utterance.onerror = onEnd; // don't get stuck if speech fails
   }
 
-  window.speechSynthesis.speak(utterance);
+  // Small delay: Chrome can drop speech called right after cancel()
+  speakTimer = setTimeout(() => synth.speak(utterance), 100);
 }
 
 // HARD WORDS SYSTEM
@@ -455,7 +474,7 @@ function renderHardWords() {
     item.className = "hard-word-item";
     item.innerHTML = `
             <span class="hard-word-korean">${word.korean}</span>
-            <span class="hard-word-details">${word.romanization} — ${word.meaning}</span>
+            <span class="hard-word-details">${word.romanization ? word.romanization + " — " : ""}${word.meaning}</span>
             <button class="remove-hard-btn" data-korean="${word.korean}" title="Remove">✕</button>
         `;
     item
@@ -470,7 +489,7 @@ function renderHardWords() {
   const jsLines = hardWords
     .map(
       (w) =>
-        `        { korean: "${w.korean}", romanization: "${w.romanization}", meaning: "${w.meaning}" },`,
+        `        { korean: "${w.korean}", ${w.romanization ? `romanization: "${w.romanization}", ` : ""}meaning: "${w.meaning}" },`,
     )
     .join("\n");
   document.getElementById("hard-words-code").textContent = jsLines;
