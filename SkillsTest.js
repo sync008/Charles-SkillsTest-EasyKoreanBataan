@@ -411,7 +411,7 @@ function displayCard() {
             .map(
               (a) => `
             <div class="answer-item">
-              <div class="answer-korean">${a.korean}</div>
+              <div class="answer-korean">${a.korean.replace(/\n/g, "<br>")}</div>
               ${a.romanization ? `<div class="answer-romanization">${a.romanization}</div>` : ""}
               ${a.meaning ? `<div class="answer-meaning">${a.meaning}</div>` : ""}
               <button class="replay-btn">🔊 Play Answer</button>

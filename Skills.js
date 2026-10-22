@@ -43,16 +43,39 @@ Object.assign(flashcardData, {
     ],
 
         "Interview (Skills Test)": [
-        // {
-        //     korean: "자기소개를 해 보세요.",
-        //     meaning: "Please introduce yourself.",
-        //     answers: [
-        //         {
-        //             korean: "안녕하세요. 저는 마리아입니다. 필리핀에서 왔습니다. 스물다섯 살입니다. 만나서 반갑습니다.",
-        //             meaning: "Hello. I am Maria. I came from the Philippines. I am 25 years old. Nice to meet you."
-        //         }
-        //     ]
-        // },
+        {
+            korean: "자기소개를 해 보세요.",
+            meaning: "Please introduce yourself.",
+            answers: [
+                {
+                    korean: `안녕하십니까?
+
+                    자기 소개하겠습니다.
+                    
+                    저는 찰스 마르텔 디말란타입니다.
+
+                    저희 가족은 네 명입니다.
+
+                    부모님과 누나가 한 명 있습니다.
+
+                    취미는 농구하고 체스입니다.
+
+                    저는 현재 영상 편집자로 일하고 있습니다.
+
+                    대학교에서 정보기술을 전공하고 졸업했습니다.
+
+                    한국에서 다양한 경험을 쌓고 한국어와 한국 문화를 더 배우고 싶습니다.
+
+                    한국은 필리핀보다 월급이 높아서 한국에서 일하고 싶습니다.
+
+                    가족을 돕고 더 나은 미래를 준비하고 싶습니다.
+
+                    새로운 환경에 빨리 적응하고 성실하게 일하겠습니다. 
+                    
+                    감사합니다.`
+                }
+            ]
+        },
         {
             korean: "결혼했습니까?",
             meaning: "Are you married?",
