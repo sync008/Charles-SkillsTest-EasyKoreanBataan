@@ -12,7 +12,10 @@
         <header>
             <h1>🇰🇷 Korean Flashcard Reader</h1>
             <p>Click a category, then click the card to reveal the answer</p>
-            <button id="dark-mode-toggle">🌙 Dark Mode</button>
+            <div class="header-buttons">
+                <button id="dark-mode-toggle">🌙 Dark Mode</button>
+                <button id="hide-content-toggle">🙈 Hide Content</button>
+            </div>
         </header>
 
         <footer class="site-footer">
@@ -49,6 +52,7 @@
                 <span id="card-counter">1 / 10</span>
                 <button id="next-btn">Next →</button>
             </div>
+            <div id="autoplay-timer" class="hidden"></div>
             <button id="shuffle-btn">🔀 Shuffle</button>
             <button id="autoplay-btn">▶ Auto Play</button>
             <button id="back-to-categories">← Back to Categories</button>

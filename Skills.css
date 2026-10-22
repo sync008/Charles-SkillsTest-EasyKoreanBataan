@@ -156,7 +156,8 @@ header p {
 #shuffle-btn,
 #autoplay-btn,
 #back-to-categories,
-#dark-mode-toggle {
+#dark-mode-toggle,
+#hide-content-toggle {
     font-size: 1em;
     font-weight: bold;
     border-radius: 8px;
@@ -222,7 +223,8 @@ header p {
 
 /* Ghost buttons: Back + Dark Mode */
 #back-to-categories,
-#dark-mode-toggle {
+#dark-mode-toggle,
+#hide-content-toggle {
     background: var(--ghost-bg);
     color: var(--ghost-color);
     border: 2px solid var(--ghost-border);
@@ -230,16 +232,25 @@ header p {
 }
 
 #back-to-categories:hover,
-#dark-mode-toggle:hover {
+#dark-mode-toggle:hover,
+#hide-content-toggle:hover {
     background: var(--ghost-hover-bg);
     color: var(--ghost-hover-color);
     border-color: var(--ghost-hover-border);
 }
 
-#dark-mode-toggle {
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#dark-mode-toggle,
+#hide-content-toggle {
     padding: 10px 20px;
     font-size: 0.9em;
-    margin-top: 15px;
 }
 
 /* Primary button */
@@ -422,6 +433,27 @@ header p {
 
 .flashcard:active {
     transform: scale(0.98);
+}
+
+/* Hide Content mode: card text is hidden, a placeholder shows instead */
+.flashcard.content-hidden {
+    position: relative;
+}
+
+.flashcard.content-hidden .card-content {
+    visibility: hidden;
+}
+
+.flashcard.content-hidden::after {
+    content: "🙈 Content hidden";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 /* Front */
@@ -621,6 +653,18 @@ header p {
     font-size: 1.2em;
     font-weight: bold;
     min-width: 80px;
+}
+
+#autoplay-timer {
+    width: fit-content;
+    margin: 0 auto 15px;
+    padding: 8px 18px;
+    background: var(--label-bg);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-buttons {

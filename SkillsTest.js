@@ -174,25 +174,122 @@ startMultiBtn.addEventListener("click", function () {
   loadMultipleCategories(selectedCategories);
 });
 
+// ===== SIMPLE MATH GENERATORS =====
+const SINO_DIGITS = ["영", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"];
+
+// Number -> Sino-Korean in Hangul (0 to 100). Example: 25 -> "이십오"
+function sinoKorean(n) {
+  if (n === 100) return "백";
+  if (n === 0) return SINO_DIGITS[0];
+
+  const tens = Math.floor(n / 10);
+  const ones = n % 10;
+
+  let result = "";
+  if (tens > 0) result += (tens === 1 ? "" : SINO_DIGITS[tens]) + "십";
+  if (ones > 0) result += SINO_DIGITS[ones];
+  return result;
+}
+
+// Picks 은 or 는 depending on whether the last syllable ends in a consonant
+function eunNeun(word) {
+  const code = word.charCodeAt(word.length - 1) - 0xac00;
+  return code >= 0 && code % 28 !== 0 ? "은" : "는";
+}
+
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Builds one flashcard from a math problem
+function buildMathCard({ a, b, answer, word, symbol }) {
+  const aKo = sinoKorean(a);
+  const bKo = sinoKorean(b);
+  const ansKo = sinoKorean(answer);
+  const particle = eunNeun(bKo);
+
+  return {
+    korean: `${a} ${word} ${b}${particle}?`, // front: digits, like your book
+    spokenKorean: `${aKo} ${word} ${bKo}${particle}?`, // back: the question in Hangul (only this is spoken automatically)
+    meaning: `${a} ${symbol} ${b} = ${answer}`,
+    answers: [{ korean: `${ansKo}입니다.` }], // shown on the back, spoken only when you press Play Answer
+  };
+}
+
+// Makes 5 different problems using the given problem-maker
+function generateMathCards(makeProblem, count = 5) {
+  const cards = [];
+  const seen = new Set();
+  let attempts = 0;
+
+  while (cards.length < count && attempts < 500) {
+    attempts++;
+    const problem = makeProblem();
+    const key = `${problem.a}|${problem.b}`;
+    if (seen.has(key)) continue; // no repeated problems
+    seen.add(key);
+    cards.push(buildMathCard(problem));
+  }
+
+  return cards;
+}
+
+// Addition: answer is at most 30
+function generateAdditionCards() {
+  return generateMathCards(() => {
+    const a = randInt(1, 29);
+    const b = randInt(1, 30 - a);
+    return { a, b, answer: a + b, word: "더하기", symbol: "+" };
+  });
+}
+
+// Subtraction: first number is at most 30, never negative, answer can be 0
+function generateSubtractionCards() {
+  return generateMathCards(() => {
+    const a = randInt(1, 30);
+    const b = randInt(1, a);
+    return { a, b, answer: a - b, word: "빼기", symbol: "-" };
+  });
+}
+
+// Multiplication: single digits only (0-9)
+function generateMultiplicationCards() {
+  return generateMathCards(() => {
+    const a = randInt(0, 9);
+    const b = randInt(0, 9);
+    return { a, b, answer: a * b, word: "곱하기", symbol: "×" };
+  });
+}
+
+// Division: always a whole number, dividend at most 100, divisor 2-10
+function generateDivisionCards() {
+  return generateMathCards(() => {
+    const b = randInt(2, 10);
+    const answer = randInt(0, Math.floor(100 / b));
+    return { a: b * answer, b, answer, word: "나누기", symbol: "÷" };
+  });
+}
+
+// Categories that make new cards every time they are opened
+const generatedCategories = {
+  "Simple Math - Addition (더하기)": generateAdditionCards,
+  "Simple Math - Subtraction (빼기)": generateSubtractionCards,
+  "Simple Math - Multiplication (곱하기)": generateMultiplicationCards,
+  "Simple Math - Division (나누기)": generateDivisionCards,
+};
+
+// Gets the cards for a category (generated or regular, in original order)
+function getCategoryCards(categoryName) {
+  const generator = generatedCategories[categoryName];
+  return generator ? generator() : [...(flashcardData[categoryName] || [])];
+}
+
 // STEP 2: LOAD A CATEGORY
 function loadCategory(categoryName) {
   currentCategory = categoryName;
 
-  // Check if this is a number practice category
-  if (categoryName === "Numbers Practice - Prices (Sino-Korean)") {
-    currentCards = generatePriceCards();
-  } else if (categoryName === "Numbers Practice - Dates (Sino-Korean)") {
-    currentCards = generateDateCards();
-  } else if (categoryName === "Numbers Practice - Native Korean (1-20)") {
-    currentCards = generateNativeNumberCards();
-  } else if (categoryName === "Numbers Practice - Phone Numbers") {
-    currentCards = generatePhoneNumberCards();
-  } else if (categoryName === "Telling Time (12hr)") {
-    currentCards = generateTellingTimeCards();
-  } else {
-    // Regular category - keep the original order (shuffle only via the Shuffle button)
-    currentCards = [...flashcardData[categoryName]];
-  }
+  // Generated categories make new cards; regular ones keep their original order
+  currentCards = getCategoryCards(categoryName);
 
   currentCardIndex = 0;
   isFlipped = false;
@@ -213,13 +310,11 @@ function loadMultipleCategories(categories) {
 
   // Combine all cards from selected categories
   categories.forEach((categoryName) => {
-    if (flashcardData[categoryName]) {
-      const categorizedCards = flashcardData[categoryName].map((card) => ({
-        ...card,
-        sourceCategory: getCategoryLabel(categoryName),
-      }));
-      currentCards = currentCards.concat(categorizedCards);
-    }
+    const categorizedCards = getCategoryCards(categoryName).map((card) => ({
+      ...card,
+      sourceCategory: getCategoryLabel(categoryName),
+    }));
+    currentCards = currentCards.concat(categorizedCards);
   });
 
   // Shuffle combined cards
@@ -583,18 +678,70 @@ shuffleBtn.addEventListener("click", function () {
 
 // AUTO PLAY
 const autoPlayBtn = document.getElementById("autoplay-btn");
+const autoPlayTimerDisplay = document.getElementById("autoplay-timer");
+let countdownInterval = null;
 let isAutoPlaying = false;
+
+// Shows a live countdown like "Next card in 3s"
+function startCountdown(seconds, label) {
+  stopCountdown();
+  const endTime = Date.now() + seconds * 1000;
+  autoPlayTimerDisplay.classList.remove("hidden");
+
+  function update() {
+    const remaining = Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
+    autoPlayTimerDisplay.textContent = `⏱ ${label} ${remaining}s`;
+  }
+
+  update();
+  countdownInterval = setInterval(update, 100);
+}
+
+function stopCountdown() {
+  clearInterval(countdownInterval);
+  countdownInterval = null;
+}
+
+function hideTimerDisplay() {
+  stopCountdown();
+  autoPlayTimerDisplay.classList.add("hidden");
+}
 let autoPlayTimer = null;
 let autoPlayRunId = 0; // lets us ignore stale speech callbacks
+let autoPlayInterval = 4; // seconds to wait after each card is spoken (user can change it)
+
+// Ask the user for the interval. Returns the number of seconds, or null if cancelled/invalid.
+function askAutoPlayInterval() {
+  const input = prompt(
+    "How many seconds should the gap be between flashcards?\n(The wait starts after each card is spoken.)",
+    autoPlayInterval,
+  );
+
+  if (input === null) return null; // user pressed Cancel
+
+  const seconds = parseFloat(input);
+  if (isNaN(seconds) || seconds < 0) {
+    alert("Please enter a valid number of seconds (for example 4).");
+    return null;
+  }
+
+  return seconds;
+}
 
 function startAutoPlay() {
   if (currentCards.length === 0) return;
+
+  // Ask for the interval first. Cancel = don't start.
+  const seconds = askAutoPlayInterval();
+  if (seconds === null) return;
+  autoPlayInterval = seconds;
 
   isAutoPlaying = true;
   autoPlayRunId++;
   autoPlayBtn.textContent = "⏸ Stop Auto Play";
 
-  // Wait 2 seconds, then play the current card
+  // Wait 2 seconds, then play the current card (this first wait stays fixed)
+  startCountdown(2, "Starting in");
   autoPlayTimer = setTimeout(autoPlayCurrentCard, 2000);
 }
 
@@ -604,6 +751,7 @@ function stopAutoPlay(cancelSpeech = false) {
   clearTimeout(autoPlayTimer);
   autoPlayTimer = null;
   autoPlayBtn.textContent = "▶ Auto Play";
+  hideTimerDisplay();
 
   if (cancelSpeech) {
     window.speechSynthesis.cancel();
@@ -612,6 +760,10 @@ function stopAutoPlay(cancelSpeech = false) {
 
 function autoPlayCurrentCard() {
   if (!isAutoPlaying) return;
+
+  stopCountdown();
+  autoPlayTimerDisplay.classList.remove("hidden");
+  autoPlayTimerDisplay.textContent = "🔊 Speaking...";
 
   isFlipped = true;
   displayCard(); // flips the card and speaks it
@@ -627,12 +779,13 @@ function onAutoPlaySpeechEnd(runId) {
     return;
   }
 
-  // Wait 4 seconds after speaking, then play the next card
+  // Wait the user's chosen interval after speaking, then play the next card
+  startCountdown(autoPlayInterval, "Next card in");
   autoPlayTimer = setTimeout(function () {
     if (!isAutoPlaying) return;
     currentCardIndex++;
     autoPlayCurrentCard();
-  }, 4000);
+  }, autoPlayInterval * 1000);
 }
 
 autoPlayBtn.addEventListener("click", function () {
@@ -694,6 +847,25 @@ darkModeToggle.addEventListener("click", function () {
     darkModeToggle.textContent = "🌙 Dark Mode";
     localStorage.setItem("darkMode", "disabled");
   }
+});
+
+// HIDE CONTENT TOGGLE
+const hideContentToggle = document.getElementById("hide-content-toggle");
+
+function applyHideContent(hidden) {
+  flashcard.classList.toggle("content-hidden", hidden);
+  hideContentToggle.textContent = hidden
+    ? "👁 Show Content"
+    : "🙈 Hide Content";
+}
+
+// Restore the saved preference
+applyHideContent(localStorage.getItem("hideContent") === "enabled");
+
+hideContentToggle.addEventListener("click", function () {
+  const hidden = !flashcard.classList.contains("content-hidden");
+  applyHideContent(hidden);
+  localStorage.setItem("hideContent", hidden ? "enabled" : "disabled");
 });
 
 // KEYBOARD NAVIGATION

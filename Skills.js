@@ -1,5 +1,8 @@
 if (typeof flashcardData === 'undefined') var flashcardData = {};
 
+// git pull --rebase origin main
+// git push origin main
+
 Object.assign(flashcardData, {
     
     "Taking Instructions": [
@@ -707,4 +710,8 @@ Object.assign(flashcardData, {
             ]
         },
     ],
+    "Simple Math - Addition (더하기)": [],
+    "Simple Math - Subtraction (빼기)": [],
+    "Simple Math - Multiplication (곱하기)": [],
+    "Simple Math - Division (나누기)": [],
 });
