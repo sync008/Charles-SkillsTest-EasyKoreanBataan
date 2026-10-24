@@ -1,5 +1,202 @@
 // MAIN JAVASCRIPT FILE - Controls all the flashcard behavior
 
+// AUDIO DIAGNOSTIC - paste this at the VERY TOP of Skills.js (no extra file needed).
+// A small "🔊 Audio check" button appears bottom-right; tap it to open the popup.
+// Adding ?debug to the address opens the popup automatically.
+// It does not change how the flashcards work.
+
+(function () {
+  // Opens by itself when the address has ?debug, otherwise waits for the button
+  const openAtStart = /[?&]debug\b/.test(location.search);
+
+  const supported = "speechSynthesis" in window;
+  const startTime = Date.now();
+  const events = [];
+
+  function add(msg) {
+    const secs = ((Date.now() - startTime) / 1000).toFixed(1).padStart(5);
+    events.push(secs + "s  " + msg);
+    render();
+  }
+
+  // ---------- Environment checks ----------
+  const ua = navigator.userAgent;
+  const inAppBrowser = /FBAN|FBAV|FB_IAB|FBIOS|Messenger|Instagram|Line\/|; wv\)/i.test(ua);
+
+  function getVoices() {
+    return supported ? window.speechSynthesis.getVoices() : [];
+  }
+
+  // Android sometimes reports "ko_KR" instead of "ko-KR", so accept both
+  function koreanVoices() {
+    return getVoices().filter((v) => /^ko/i.test(v.lang.replace("_", "-")));
+  }
+
+  function verdict() {
+    if (!supported) return "NO SPEECH SUPPORT: speechSynthesis is missing (likely an in-app browser).";
+    const all = getVoices();
+    if (all.length === 0) return "NO VOICES: the browser reports 0 voices (no TTS engine, or voices still loading).";
+    if (koreanVoices().length === 0) return "NO KOREAN VOICE: voices exist, but none are Korean.";
+    return "Korean voice found. If still silent, check the event log and media volume.";
+  }
+
+  // ---------- Log every speak() call and what happens to it ----------
+  if (supported) {
+    const originalSpeak = SpeechSynthesis.prototype.speak;
+
+    SpeechSynthesis.prototype.speak = function (utterance) {
+      const label = '"' + utterance.text.slice(0, 12) + '"';
+      let started = false;
+      let finished = false;
+
+      add("speak() " + label + " lang=" + utterance.lang + " voices=" + getVoices().length);
+
+      utterance.addEventListener("start", function () {
+        started = true;
+        add("start " + label);
+      });
+      utterance.addEventListener("end", function () {
+        finished = true;
+        add("end " + label);
+      });
+      utterance.addEventListener("error", function (e) {
+        finished = true;
+        // "canceled" / "interrupted" are normal when you change cards quickly
+        add("ERROR " + label + " -> " + e.error);
+      });
+
+      setTimeout(function () {
+        if (!started && !finished) add("WARNING: no 'start' after 3s " + label + " (silent failure)");
+      }, 3000);
+
+      const waitMs = Math.max(8000, utterance.text.length * 400);
+      setTimeout(function () {
+        if (started && !finished) add("WARNING: 'end' never fired " + label + " (Auto Play would get stuck)");
+      }, waitMs);
+
+      return originalSpeak.call(this, utterance);
+    };
+
+    window.speechSynthesis.addEventListener("voiceschanged", function () {
+      add("voiceschanged: " + getVoices().length + " voices, " + koreanVoices().length + " Korean");
+    });
+  }
+
+  window.addEventListener("error", function (e) {
+    add("JS ERROR: " + e.message);
+  });
+
+  // ---------- Report text ----------
+  function buildReport() {
+    const all = getVoices();
+    const lines = [
+      "=== AUDIO DIAGNOSTIC ===",
+      "RESULT: " + verdict(),
+      "",
+      "speechSynthesis supported: " + supported,
+      "In-app browser suspected: " + inAppBrowser,
+      "Voices total: " + all.length + " | Korean: " + koreanVoices().length,
+      "Korean voices: " +
+        (koreanVoices().map((v) => v.name + " (" + v.lang + (v.localService ? ", offline" : ", online") + ")").join("; ") || "none"),
+      "All voice languages: " +
+        ([...new Set(all.map((v) => v.lang))].join(", ") || "none"),
+      "Online: " + navigator.onLine,
+      "User agent: " + ua,
+      "",
+      "--- Event log ---",
+      ...events,
+    ];
+    return lines.join("\n");
+  }
+
+  // ---------- Panel ----------
+  const panel = document.createElement("div");
+  panel.style.cssText =
+    "width:min(92vw,520px);max-height:80vh;overflow:auto;box-sizing:border-box;" +
+    "background:#111;color:#9fe3a5;font:12px/1.4 monospace;padding:14px;" +
+    "border:2px solid #9fe3a5;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.6);";
+
+  // Dim background that centers the popup
+  const overlay = document.createElement("div");
+  overlay.style.cssText =
+    "position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;" +
+    "background:rgba(0,0,0,0.6);padding:10px;";
+
+  // Small button to bring the popup back after closing it
+  const reopenBtn = document.createElement("button");
+  reopenBtn.textContent = "🔊 Audio check";
+  reopenBtn.style.cssText =
+    "position:fixed;right:10px;bottom:10px;z-index:99998;display:none;padding:8px 12px;" +
+    "font-size:12px;border-radius:20px;border:1px solid #9fe3a5;background:#111;color:#9fe3a5;";
+  reopenBtn.addEventListener("click", function () {
+    overlay.style.display = "flex";
+    reopenBtn.style.display = "none";
+    render();
+  });
+
+  const buttons = document.createElement("div");
+  buttons.style.cssText = "display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;";
+
+  function makeButton(text, onClick) {
+    const b = document.createElement("button");
+    b.textContent = text;
+    b.style.cssText = "padding:6px 10px;font-size:12px;border-radius:6px;border:1px solid #9fe3a5;background:#222;color:#9fe3a5;";
+    b.addEventListener("click", onClick);
+    buttons.appendChild(b);
+  }
+
+  // Test buttons are real taps, so browsers can't block them for "no user gesture"
+  makeButton("Test Korean voice", function () {
+    const u = new SpeechSynthesisUtterance("안녕하세요");
+    u.lang = "ko-KR";
+    window.speechSynthesis.speak(u);
+  });
+
+  makeButton("Test English voice", function () {
+    const u = new SpeechSynthesisUtterance("Hello, this is a test.");
+    u.lang = "en-US";
+    window.speechSynthesis.speak(u);
+  });
+
+  makeButton("Copy report", function () {
+    const text = buildReport();
+    const done = () => add("Report copied");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, () => add("Copy failed - screenshot this panel instead"));
+    } else {
+      add("Copy not available - screenshot this panel instead");
+    }
+  });
+
+  makeButton("Close", function () {
+    overlay.style.display = "none";
+    reopenBtn.style.display = "block";
+  });
+
+  const output = document.createElement("pre");
+  output.style.cssText = "white-space:pre-wrap;word-break:break-word;margin:0;user-select:text;";
+
+  panel.appendChild(buttons);
+  panel.appendChild(output);
+
+  function render() {
+    output.textContent = buildReport();
+    output.parentNode && (panel.scrollTop = panel.scrollHeight);
+  }
+
+  overlay.appendChild(panel);
+  document.body.appendChild(overlay);
+  document.body.appendChild(reopenBtn);
+  // Popup starts closed (small button visible) unless the address has ?debug
+  overlay.style.display = openAtStart ? "flex" : "none";
+  reopenBtn.style.display = openAtStart ? "none" : "block";
+  render();
+
+  // Voices often load a moment after the page does, so refresh the report
+  setTimeout(render, 1000);
+  setTimeout(render, 3000);
+})();
+
 // VARIABLES TO TRACK STATE
 let currentCategory = null; // Which category is selected
 let currentCards = []; // Array of cards in current category
