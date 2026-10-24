@@ -389,6 +389,85 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      korean: "한국어를 공부하면서 가장 어려운 점이 무엇인가요?",
+      meaning: "What is the most difficult part of learning Korean?",
+      answers: [
+        {
+          korean: "한국어 단어를 외우는 것이 가장 어렵습니다.",
+          meaning: "Memorizing Korean vocabulary is the hardest.",
+        },
+        {
+          korean: "문법과 동사 변형이 가장 어렵다고 생각합니다.",
+          meaning:
+            "I think grammar and verb conjugation are the most difficult.",
+        },
+      ],
+    },
+    {
+      korean: "한국에 왜 가고 싶습니까?",
+      meaning: "Why do you want to go to Korea?",
+      answers: [
+        {
+          korean: "한국에서 돈 많이 벌고 싶습니다.",
+          meaning: "I want to earn and save money in Korea.",
+        },
+        {
+          korean: "높은 급여 때문에 한국에서 일하고 싶습니다.",
+          meaning: "Because of the high salary, I want to work in Korea.",
+        },
+        {
+          korean: "한국에서 월급이 높아서 가고 싶습니다.",
+          meaning: "I want to go to Korea because the salary is better.",
+        },
+        {
+          korean: "돈을 벌어 가족에게 도움을 드리고 싶습니다.",
+          meaning: "I want to earn money and help my family.",
+        },
+      ],
+    },
+    {
+      korean: "한국에 가면 어떤 일을 하고 싶어요?",
+      meaning: "What would you like to do in Korea?",
+      answers: [
+        {
+          korean: "한국 사계절을 경험하고 싶습니다.",
+          meaning: "I want to experience the Korean seasons.",
+        },
+        {
+          korean: "한류를 체험하고 K-pop 콘서트에 참석하고 싶습니다.",
+          meaning:
+            "I want to experience the Korean Wave and attend a K-pop concert.",
+        },
+        {
+          korean: "한국 음식을 먹어보고 싶습니다.",
+          meaning: "I want to eat Korean food.",
+        },
+        {
+          korean: "한국 문화를 경험해 보고 싶습니다.",
+          meaning: "I want to experience Korean culture.",
+        },
+        {
+          korean: "전통 김치 만드는 법을 배우고 싶습니다.",
+          meaning: "I want to learn how to make traditional Korean kimchi.",
+        },
+      ],
+    },
+    {
+      korean: "어떤 한국 음식을 먹어보고 싶으세요?",
+      meaning:
+        "What kind of Korean food would you like to try? (Follow-up question)",
+      answers: [
+        {
+          korean: "떡볶이를 먹고 싶습니다.",
+          meaning: "I want to eat tteokbokki.",
+        },
+        {
+          korean: "____를/을 먹고 싶습니다.",
+          meaning: "I want to eat ____.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
@@ -717,6 +796,10 @@ Object.assign(flashcardData, {
       meaning:
         "What kind of Korean food would you like to try? (Follow-up question)",
       answers: [
+        {
+          korean: "떡볶이를 먹고 싶습니다.",
+          meaning: "I want to eat tteokbokki.",
+        },
         {
           korean: "____를/을 먹고 싶습니다.",
           meaning: "I want to eat ____.",
