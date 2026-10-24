@@ -510,6 +510,58 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      korean: "일하면서 정해진 시간을 잘 지키시나요?",
+      meaning: "Do you adhere well to the scheduled time while working?",
+      answers: [
+        {
+          korean: "네, 시간을 잘 지켜야 일을 잘 준비하고 시작할 수 있습니다.",
+          meaning:
+            "Yes, because keeping time helps me prepare well and start work properly.",
+        },
+        {
+          korean: "네, 시간을 잘 지켜야 성실하게 일할 수 있습니다.",
+          meaning: "Yes, keeping time is important to work diligently.",
+        },
+      ],
+    },
+    {
+      korean: "회사에는 몇 시까지 도착할 거예요?",
+      meaning: "What time will you arrive at the company?",
+      answers: [
+        {
+          korean: "근무 시간 10분 전까지 도착하겠습니다.",
+          meaning:
+            "I will arrive at the workplace 10 minutes before working hours.",
+        },
+      ],
+    },
+    {
+      korean: "직장동료가 바쁘면 어떻게 할 거예요?",
+      meaning: "What will you do if your coworker is busy?",
+      answers: [
+        {
+          korean: "제 일이 끝나면 동료의 일을 도와주겠습니다.",
+          meaning:
+            "If I finish my work early, I will help with my coworker's work.",
+        },
+      ],
+    },
+    {
+      korean: "직장동료와 어떻게 지낼 거예요?",
+      meaning: "How will you get along with your coworkers?",
+      answers: [
+        {
+          korean: "직장동료와 사이좋게 지내고 서로 도우겠습니다.",
+          meaning:
+            "I will get along well with my coworkers and help each other.",
+        },
+        {
+          korean: "서로 존중하면서 잘 지낼 겁니다.",
+          meaning: "I will get along well by respecting each other.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
