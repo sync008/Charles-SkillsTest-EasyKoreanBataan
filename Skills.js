@@ -622,6 +622,68 @@ Object.assign(flashcardData, {
         },
       ],
     },
+     {
+      korean: "회사에 일이 많으면 어떻게 할 거예요?",
+      meaning: "What will you do if there is too much work to be done?",
+      answers: [
+        {
+          korean: "일이 많으면 중요한 일부터 하고 야근도 하겠습니다.",
+          meaning:
+            "If there's a lot of work, I'll prioritize, manage my time well, and be open to doing overtime if needed.",
+        },
+        {
+          korean: "야근하겠습니다.",
+          meaning: "I will work overtime.",
+        },
+      ],
+    },
+    {
+      korean: "상사가 내 의견에 반대하면 어떻게 할 거예요?",
+      meaning: "What will you do if your boss does not agree with you?",
+      answers: [
+        {
+          korean: "상사가 제 의견에 반대하면 잘 듣고 따르겠습니다.",
+          meaning:
+            "If my boss disagrees with my opinion, I will listen carefully and follow.",
+        },
+        {
+          korean: "상사의 의견을 존중하고 상황에 맞게 따르겠습니다.",
+          meaning:
+            "I will respect my boss's opinion and follow according to the situation.",
+        },
+      ],
+    },
+    {
+      korean: "일을 하다 실수하면 어떻게 할 거예요?",
+      meaning: "What will you do if you make a mistake?",
+      answers: [
+        {
+          korean: "실수하면 먼저 상사에게 보고하고 바로 고치겠습니다.",
+          meaning:
+            "If I make a mistake, I will first report it to my superior and correct it immediately.",
+        },
+        {
+          korean: "실수를 인정하고 바로 고칠 거예요.",
+          meaning: "I will admit my mistake and fix it immediately.",
+        },
+        {
+          korean: "실수를 인정하고 다시 조심해서 일할 거예요.",
+          meaning: "I will admit my mistake and work more carefully next time.",
+        },
+      ],
+    },
+    {
+      korean: "불량품이 많으면 어떻게 할 거예요?",
+      meaning: "What will you do if there are many defective items?",
+      answers: [
+        {
+          korean:
+            "즉시 생산을 멈추고, 원인을 확인한 후 상사에게 보고할 거예요.",
+          meaning:
+            "I will immediately stop production, check the cause, and report it to my superior.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
