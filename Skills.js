@@ -468,6 +468,48 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      korean: "한국 음식을 먹어봤어요?",
+      meaning: "Have you tried Korean food? (Follow-up question)",
+      answers: [
+        {
+          korean: "아니요, 아직 안 먹어 봤습니다.",
+          meaning: "No, I haven't tried it yet.",
+        },
+        {
+          korean: "네, 김치를 먹어 봤습니다. 조금 맵습니다.",
+          meaning: "Yes, I have tried kimchi. It was a little spicy.",
+        },
+      ],
+    },
+    {
+      korean: "직업이 있어요?",
+      meaning: "Do you have a job?",
+      answers: [
+        {
+          korean: "네, 있습니다.",
+          meaning: "Yes, I have one.",
+        },
+        {
+          korean: "아니요, 지금 없습니다.",
+          meaning: "No, I don't have one right now.",
+        },
+      ],
+    },
+    {
+      korean: "직업 뭐예요?",
+      meaning: "What is your job?",
+      answers: [
+        {
+          korean: "제 직업은 회사원입니다.",
+          meaning: "My job is an office worker.",
+        },
+        {
+          korean: "제 직업은 영상 편집자입니다.",
+          meaning: "My job is a video editor.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
