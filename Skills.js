@@ -562,6 +562,66 @@ Object.assign(flashcardData, {
         },
       ],
     },
+    {
+      korean: "다른 사람들과 잘 지내는 것이 왜 중요하다고 생각하세요?",
+      meaning: "Why do you think getting along with others is important?",
+      answers: [
+        {
+          korean: "다른 사람들과 잘 지내면 일을 편하고 쉽게 할 수 있습니다.",
+          meaning:
+            "If you get along with others, you can work comfortably and easily.",
+        },
+      ],
+    },
+    {
+      korean: "새로운 동료들과 잘 지내기 위해 어떤 노력을 할 수 있나요?",
+      meaning:
+        "What kind of effort can you make to get along well with new colleagues?",
+      answers: [
+        {
+          korean:
+            "새로운 동료들과 잘 지내려면 친절하게 인사하고 대화를 많이 해야 해요.",
+          meaning:
+            "To get along with new colleagues, you should greet them kindly and talk with them often.",
+        },
+        {
+          korean: "새로운 동료들과 잘 지내려면 예의를 지키고 배려해야 해요.",
+          meaning:
+            "To get along with new colleagues, be respectful and considerate.",
+        },
+      ],
+    },
+    {
+      korean: "직장동료가 아프면 어떻게 할 거예요?",
+      meaning: "What will you do if your co-worker is sick?",
+      answers: [
+        {
+          korean: "필요하면 동료에게 쉬고 집에 가라고 조언하겠습니다.",
+          meaning: "I will advise my co-worker to take a rest or go home.",
+        },
+        {
+          korean: "쉬라고 말하고 필요한 일이 있으면 도와주겠습니다.",
+          meaning: "I will tell them to rest and help if needed.",
+        },
+      ],
+    },
+    {
+      korean: "직장동료가 다쳤으면 어떻게 할 거예요?",
+      meaning: "What will you do if your co-worker got hurt?",
+      answers: [
+        {
+          korean: "빨리 도와드리고 상사에게 보고하겠습니다.",
+          meaning:
+            "I will help my co-worker quickly and report it to my superior.",
+        },
+        {
+          korean:
+            "먼저 기계를 멈추고 상사에게 보고한 후에 응급처치를 도와드리겠습니다.",
+          meaning:
+            "I will first stop the machine, report to the supervisor, and then assist with first aid.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
