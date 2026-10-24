@@ -5,6 +5,11 @@
 // Adding ?debug to the address opens the popup automatically.
 // It does not change how the flashcards work.
 
+// AUDIO DIAGNOSTIC - paste this at the VERY TOP of Skills.js (no extra file needed).
+// A small "🔊 Audio check" button appears bottom-right; tap it to open the popup.
+// Adding ?debug to the address opens the popup automatically.
+// It does not change how the flashcards work.
+
 (function () {
   // Opens by itself when the address has ?debug, otherwise waits for the button
   const openAtStart = /[?&]debug\b/.test(location.search);
@@ -166,6 +171,36 @@
     } else {
       add("Copy not available - screenshot this panel instead");
     }
+  });
+
+  // Built-in cache clear: removes service workers + Cache Storage, then re-downloads
+  // this page's own scripts and stylesheets fresh before reloading.
+  // Your saved Hard Words, dark mode and Hide Content settings are NOT touched.
+  makeButton("Clear cache & reload", async function () {
+    add("Clearing cache...");
+    try {
+      if ("serviceWorker" in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map((r) => r.unregister()));
+        add("Service workers removed: " + regs.length);
+      }
+      if (window.caches) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map((k) => caches.delete(k)));
+        add("Cache storage cleared: " + keys.length);
+      }
+      // Force a fresh download of every script and stylesheet on this page
+      const files = [
+        ...document.querySelectorAll("script[src]"),
+        ...document.querySelectorAll("link[rel='stylesheet']"),
+      ].map((el) => el.src || el.href);
+      files.push(location.href);
+      await Promise.all(files.map((f) => fetch(f, { cache: "reload" }).catch(() => {})));
+      add("Fresh files downloaded: " + files.length);
+    } catch (err) {
+      add("Cache clear problem: " + err.message);
+    }
+    location.reload();
   });
 
   makeButton("Close", function () {
