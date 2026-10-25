@@ -684,6 +684,83 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      korean: "문제가 생기면 해결책을 찾기 위해 어떻게 노력하실 건가요?",
+      meaning: "How would you work to find a solution if a problem arises?",
+      answers: [
+        {
+          korean: "문제가 생기면 즉시 상사에게 보고하고 지시에 따를 거예요.",
+          meaning:
+            "If a problem arises, I will immediately report it to my superior and follow instructions.",
+        },
+        {
+          korean: "문제가 생기면 침착하게 생각하고 상사와 상의하겠습니다.",
+          meaning:
+            "If a problem occurs, I will think calmly and consult with my superior.",
+        },
+      ],
+    },
+    {
+      korean: "공장에 불이 나면 어떻게 할 거예요?",
+      meaning: "What will you do if the factory is on fire?",
+      answers: [
+        {
+          korean: "119에 신고하겠습니다.",
+          meaning: "I will report/call 119.",
+        },
+        {
+          korean: "불이 나면 침착하게 행동하고 안전 규칙을 따르겠습니다.",
+          meaning:
+            "If there is a fire, I will act calmly and follow the safety rules.",
+        },
+      ],
+    },
+    {
+      korean: "작업 하다가 사고가 나면 어떻게 할 거예요?",
+      meaning: "What will you do if you get into an accident while working?",
+      answers: [
+        {
+          korean:
+            "사고가 나면 먼저 기계를 멈추고 상사에게 바로 보고하겠습니다.",
+          meaning:
+            "If an accident happens, I will first stop the machine and immediately report to my superior.",
+        },
+      ],
+    },
+    {
+      korean: "회사에서 월급을 안 주면 어떻게 할 거예요?",
+      meaning:
+        "What are you going to do if your company doesn't give you your salary?",
+      answers: [
+        {
+          korean: "상사에게 물어보고 이유를 알아보겠습니다.",
+          meaning: "I will ask my boss and find out the reason why.",
+        },
+      ],
+    },
+    {
+      korean: "의사소통이 왜 중요한지 설명할 수 있나요?",
+      meaning: "Can you explain why communication is important?",
+      answers: [
+        {
+          korean: "의사소통이 잘 되어야 안전사고를 예방할 수 있습니다.",
+          meaning:
+            "Communication is important because it can prevent safety accidents.",
+        },
+        {
+          korean:
+            "의사소통이 중요하면 안전하게 일하고 실수를 줄일 수 있습니다.",
+          meaning:
+            "Communication is important because it helps you work safely and reduce mistakes.",
+        },
+        {
+          korean:
+            "의사소통이 중요하면 안전하게 일하고 일을 제대로 할 수 있습니다.",
+          meaning:
+            "Communication is important because it helps you work safely and do the job properly.",
+        },
+      ],
+    },
   ],
 
   "Interview (Skills Test)": [
