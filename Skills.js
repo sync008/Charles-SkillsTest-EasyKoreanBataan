@@ -130,7 +130,7 @@ Object.assign(flashcardData, {
   ],
 
   "Manufacturing": [
-    { image: "images/manufacturing/01-co2-welding-machine.png", korean: "CO2용접기", meaning: "CO2 Welding Machine" },
+    { image: "images/manufacturing/01-co2-welding-machine.png", korean: "CO2용접기", meaning: "CO2 Welding Machine (wag po pansinin ung pronounciation kung mali)" },
     { image: "images/manufacturing/02-circuit-breaker.png", korean: "누전차단기", meaning: "Circuit Breaker" },
     { image: "images/manufacturing/03-lubricant-oil.png", korean: "방청유", meaning: "Lubricant Oil" },
     { image: "images/manufacturing/04-vernier-calipers.png", korean: "버니어 캘리퍼스", meaning: "Vernier Calipers" },
