@@ -185,7 +185,9 @@
         add("Service workers removed: " + regs.length);
       }
       if (window.caches) {
-        const keys = await caches.keys();
+        const keys = (await caches.keys()).filter(
+          (k) => k !== "flashcard-images-v1",
+        );
         await Promise.all(keys.map((k) => caches.delete(k)));
         add("Cache storage cleared: " + keys.length);
       }
@@ -516,12 +518,141 @@ function getCategoryCards(categoryName) {
   return generator ? generator() : [...(flashcardData[categoryName] || [])];
 }
 
-// STEP 2: LOAD A CATEGORY
-function loadCategory(categoryName) {
-  currentCategory = categoryName;
+// ===== IMAGE CACHE =====
+// Images are stored in the browser's Cache Storage, and are only downloaded
+// after the user agrees. Bump the "v1" if you ever want to force a re-download of everything.
+const IMAGE_CACHE_NAME = "flashcard-images-v1";
+const imageURLs = new Map(); // image path -> blob URL (used for display)
 
+// Unique image paths used by a list of cards
+function getImagePaths(cards) {
+  return [...new Set(cards.filter((c) => c.image).map((c) => c.image))];
+}
+
+// Which of these images are NOT in the cache yet?
+async function getUncachedImages(paths) {
+  const cache = await caches.open(IMAGE_CACHE_NAME);
+  const missing = [];
+  for (const path of paths) {
+    if (!(await cache.match(path))) missing.push(path);
+  }
+  return missing;
+}
+
+// Adds up file sizes using HEAD requests (nothing is downloaded yet)
+async function getDownloadSize(paths) {
+  let totalBytes = 0;
+  let unknownCount = 0;
+
+  await Promise.all(
+    paths.map(async (path) => {
+      try {
+        const res = await fetch(path, { method: "HEAD", cache: "no-store" });
+        const length = parseInt(res.headers.get("content-length"), 10);
+        if (res.ok && length) totalBytes += length;
+        else unknownCount++;
+      } catch (err) {
+        unknownCount++;
+      }
+    }),
+  );
+
+  return { totalBytes, unknownCount };
+}
+
+// Full-screen message while checking / downloading
+function showCacheOverlay(text) {
+  let overlay = document.getElementById("cache-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "cache-overlay";
+    document.body.appendChild(overlay);
+  }
+  overlay.textContent = text;
+}
+
+function hideCacheOverlay() {
+  const overlay = document.getElementById("cache-overlay");
+  if (overlay) overlay.remove();
+}
+
+// Turns cached images into blob URLs so cards can show them instantly
+async function prepareImageURLs(paths) {
+  const cache = await caches.open(IMAGE_CACHE_NAME);
+  for (const path of paths) {
+    if (imageURLs.has(path)) continue;
+    const res = await cache.match(path);
+    if (res) imageURLs.set(path, URL.createObjectURL(await res.blob()));
+  }
+}
+
+// Cached blob URL if we have it, otherwise the normal path
+function imgSrc(card) {
+  return imageURLs.get(card.image) || card.image;
+}
+
+// Runs EVERY time a category opens.
+// Returns true if the cards are ready to show, false if the user cancelled or it failed.
+async function ensureImagesReady(cards) {
+  const paths = getImagePaths(cards);
+  if (paths.length === 0) return true; // no images, nothing to do
+  if (!window.caches) return true; // Cache Storage needs https/localhost; fall back to normal loading
+
+  try {
+    showCacheOverlay("Checking saved images...");
+    const missing = await getUncachedImages(paths);
+
+    if (missing.length > 0) {
+      const { totalBytes, unknownCount } = await getDownloadSize(missing);
+      hideCacheOverlay();
+
+      let sizeText;
+      if (unknownCount === missing.length) {
+        sizeText = "an unknown amount of data";
+      } else {
+        sizeText = `about ${(totalBytes / 1024 / 1024).toFixed(2)} MB`;
+        if (unknownCount > 0) sizeText += " (plus some files of unknown size)";
+      }
+
+      const ok = confirm(
+        `Do you want to run this category?\n\n` +
+          `You need to cache the images first.\n` +
+          `${missing.length} image(s) will require ${sizeText}.`,
+      );
+      if (!ok) return false;
+
+      const cache = await caches.open(IMAGE_CACHE_NAME);
+      let done = 0;
+      for (const path of missing) {
+        showCacheOverlay(`Downloading images... ${done} / ${missing.length}`);
+        const res = await fetch(path);
+        if (!res.ok) throw new Error(`Could not download ${path}`);
+        await cache.put(path, res);
+        done++;
+      }
+    }
+
+    showCacheOverlay("Loading images...");
+    await prepareImageURLs(paths);
+    hideCacheOverlay();
+    return true;
+  } catch (err) {
+    hideCacheOverlay();
+    alert("Image download failed: " + err.message + "\nCheck your connection and try again.");
+    return false;
+  }
+}
+
+// STEP 2: LOAD A CATEGORY
+async function loadCategory(categoryName) {
   // Generated categories make new cards; regular ones keep their original order
-  currentCards = getCategoryCards(categoryName);
+  const cards = getCategoryCards(categoryName);
+
+  // Check the image cache first (asks the user if a download is needed)
+  if (!(await ensureImagesReady(cards))) return;
+
+  currentCategory = categoryName;
+  currentCards = cards;
 
   currentCardIndex = 0;
   isFlipped = false;
@@ -536,9 +667,8 @@ function loadCategory(categoryName) {
 }
 
 // LOAD MULTIPLE CATEGORIES
-function loadMultipleCategories(categories) {
-  currentCategory = "Multiple Categories";
-  currentCards = [];
+async function loadMultipleCategories(categories) {
+  let combinedCards = [];
 
   // Combine all cards from selected categories
   categories.forEach((categoryName) => {
@@ -546,8 +676,14 @@ function loadMultipleCategories(categories) {
       ...card,
       sourceCategory: getCategoryLabel(categoryName),
     }));
-    currentCards = currentCards.concat(categorizedCards);
+    combinedCards = combinedCards.concat(categorizedCards);
   });
+
+  // Check the image cache first (asks the user if a download is needed)
+  if (!(await ensureImagesReady(combinedCards))) return;
+
+  currentCategory = "Multiple Categories";
+  currentCards = combinedCards;
 
   // Shuffle combined cards
   // currentCards = shuffleArray(currentCards);
@@ -577,6 +713,9 @@ function displayCard() {
   if (isFlipped) {
     // Show BACK of card
     const spokenText = card.spokenKorean || card.korean;
+    const imageHTML = card.image
+      ? `<img class="card-image" src="${imgSrc(card)}" alt="${card.meaning || ""}">`
+      : "";
 
     // Vocabulary breakdown (Reading Practice)
     let breakdownHTML = "";
@@ -669,6 +808,7 @@ function displayCard() {
       <div class="card-back">
         ${sourceCategoryHTML}
         ${chapterBadgeHTML}
+        ${imageHTML}
         <div class="korean">${spokenText}</div>
         ${card.romanization ? `<div class="romanization">${card.romanization}</div>` : ""}
         ${card.meaning ? `<div class="meaning">${card.meaning}</div>` : ""}
@@ -714,10 +854,10 @@ function displayCard() {
       isAutoPlaying ? () => onAutoPlaySpeechEnd(runId) : null,
     );
   } else {
-    // Show FRONT of card
-    cardContent.innerHTML = `
-      <div class="card-front">${card.korean}</div>
-    `;
+    // Show FRONT of card (image cards show only the picture)
+    cardContent.innerHTML = card.image
+      ? `<div class="card-front"><img class="card-image" src="${imgSrc(card)}" alt="Flashcard image"></div>`
+      : `<div class="card-front">${card.korean}</div>`;
   }
 
   cardCounter.textContent = `${currentCardIndex + 1} / ${currentCards.length}`;
