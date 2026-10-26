@@ -244,7 +244,9 @@ let selectedCategories = []; // Array of selected category names
 
 const memorizedCategories = [
   "Taking Instructions",
-  "Interview (Skills Test)"
+  "Interview (Skills Test)",
+  "Manufacturing",
+  "Mandatory Signs"
 ];
 
 const categoryDisplayNames = {
