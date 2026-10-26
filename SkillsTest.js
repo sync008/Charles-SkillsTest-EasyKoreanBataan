@@ -248,7 +248,8 @@ const memorizedCategories = [
   "Manufacturing",
   "Mandatory Signs",
   "Warning",
-  "Firefighting Equipment"
+  "Firefighting Equipment",
+  "Safety Hygiene Equipment"
 ];
 
 const categoryDisplayNames = {
