@@ -197,7 +197,7 @@ Object.assign(flashcardData, {
     { image: "images/warning/04-hot-surface.png", korean: "뜨거운 표면", meaning: "Hot Surface" },
     { image: "images/warning/05-slippery-surface.png", korean: "미끄러운 표면", meaning: "Slippery Surface" },
     { image: "images/warning/06-floor-obstacle.png", korean: "바닥면 장애물", meaning: "Floor Obstacle" },
-    { image: "images/warning/07-radioactive-material.png", korean: "방사능 물질 또는 이온화 방사선", meaning: "Radioactive Material or Ionising Radiation" },
+    { image: "images/warning/07-radioactive-material.png", korean: "방사능 물질", meaning: "Radioactive Material or Ionising Radiation" },
     { image: "images/warning/08-biohazard.png", korean: "생물학적 위험", meaning: "Biohazard" },
     { image: "images/warning/09-flammable-material.png", korean: "인화물질", meaning: "Flammable Material" },
     { image: "images/warning/10-general-warning-sign.png", korean: "일반 경고 표시", meaning: "General Warning Sign" },
