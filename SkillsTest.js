@@ -243,7 +243,8 @@ let isMultiSelectMode = false; // Is multi-select mode active?
 let selectedCategories = []; // Array of selected category names
 
 const memorizedCategories = [
-  "Chapter 60.2 (Insurance Exclusive to Foreign Workers)",
+  "Taking Instructions",
+  "Interview (Skills Test)"
 ];
 
 const categoryDisplayNames = {
