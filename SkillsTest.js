@@ -246,7 +246,8 @@ const memorizedCategories = [
   "Taking Instructions",
   "Interview (Skills Test)",
   "Manufacturing",
-  "Mandatory Signs"
+  "Mandatory Signs",
+  "Warning"
 ];
 
 const categoryDisplayNames = {
