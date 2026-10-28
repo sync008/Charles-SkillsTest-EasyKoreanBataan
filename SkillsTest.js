@@ -871,7 +871,98 @@ function displayCard() {
   updateNavigationButtons();
 }
 
-// SPEECH SYNTHESIS FUNCTION
+// ===== VOICE SETTINGS =====
+const SPEED_OPTIONS = [0.8, 0.9, 1.0, 1.1, 1.2, 1.3];
+const savedRate = parseFloat(localStorage.getItem("speechRate"));
+let speechRate = SPEED_OPTIONS.includes(savedRate) ? savedRate : 1.1; // default 1.1x
+
+// Known male Korean voices: Edge/Windows "InJoon", "Hyunsu", "BongJin", "GookMin",
+// Apple "Minsu", plus any voice whose name says male
+const MALE_VOICE_HINTS = /injoon|hyunsu|bongjin|gookmin|minsu|\bmale\b|남성/i;
+const FEMALE_VOICE_HINTS = /yuna|heami|sun-?hi|jimin|seohyeon|soonbok|yujin|sora|google.*(한국|korean)|female|여성/i;
+
+function getKoreanVoices() {
+  return window.speechSynthesis
+    .getVoices()
+    .filter((v) => /^ko/i.test(v.lang.replace("_", "-")));
+}
+
+function pickKoreanVoice() {
+  const korean = getKoreanVoices();
+
+  // 1. The voice you chose in the dropdown
+  const saved = localStorage.getItem("voiceName");
+  const chosen = korean.find((v) => v.name === saved);
+  if (chosen) return chosen;
+
+  // 2. Otherwise guess a male voice by name
+  return (
+    korean.find((v) => MALE_VOICE_HINTS.test(v.name)) ||
+    korean.find((v) => !FEMALE_VOICE_HINTS.test(v.name)) ||
+    korean[0] ||
+    null
+  );
+}
+
+// Dropdown in the header that lists every Korean voice on this device
+function setupVoicePicker() {
+  const select = document.createElement("select");
+  select.id = "voice-select";
+  select.style.cssText =
+    "padding:10px;border-radius:8px;font-size:0.9em;max-width:100%;";
+
+  function fill() {
+    const voices = getKoreanVoices();
+    if (voices.length === 0) return; // voices not loaded yet
+    const current = pickKoreanVoice();
+    select.innerHTML = "";
+    voices.forEach((v) => {
+      const opt = document.createElement("option");
+      opt.value = v.name;
+      opt.textContent = `🗣 ${v.name}`;
+      if (current && v.name === current.name) opt.selected = true;
+      select.appendChild(opt);
+    });
+  }
+
+  select.addEventListener("change", function () {
+    localStorage.setItem("voiceName", this.value);
+    speakKorean("안녕하세요. 목소리를 확인합니다."); // quick preview
+  });
+
+  document.querySelector(".header-buttons").appendChild(select);
+  fill();
+  window.speechSynthesis.addEventListener("voiceschanged", fill);
+}
+
+setupVoicePicker();
+
+// Dropdown in the header to choose the speech speed
+function setupSpeedPicker() {
+  const select = document.createElement("select");
+  select.id = "speed-select";
+  select.style.cssText =
+    "padding:10px;border-radius:8px;font-size:0.9em;max-width:100%;";
+
+  SPEED_OPTIONS.forEach((rate) => {
+    const opt = document.createElement("option");
+    opt.value = rate;
+    opt.textContent = `⚡ ${rate.toFixed(1)}x`;
+    if (rate === speechRate) opt.selected = true;
+    select.appendChild(opt);
+  });
+
+  select.addEventListener("change", function () {
+    speechRate = parseFloat(this.value);
+    localStorage.setItem("speechRate", speechRate);
+    speakKorean("안녕하세요. 속도를 확인합니다."); // quick preview at the new speed
+  });
+
+  document.querySelector(".header-buttons").appendChild(select);
+}
+
+setupSpeedPicker();
+
 // SPEECH SYNTHESIS FUNCTION
 let speakTimer = null;
 
@@ -884,7 +975,10 @@ function speakKorean(text, onEnd) {
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "ko-KR";
-  utterance.rate = 0.8; // Slightly slower for learning
+  utterance.rate = speechRate;
+
+  const voice = pickKoreanVoice();
+  if (voice) utterance.voice = voice;
 
   if (onEnd) {
     utterance.onend = onEnd;
