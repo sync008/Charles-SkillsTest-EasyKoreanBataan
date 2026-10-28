@@ -250,7 +250,8 @@ const memorizedCategories = [
   "Warning",
   "Firefighting Equipment",
   "Safety Hygiene Equipment",
-  "Prohibition"
+  "Prohibition",
+  "Emergency Evac. Route"
 ];
 
 const categoryDisplayNames = {
