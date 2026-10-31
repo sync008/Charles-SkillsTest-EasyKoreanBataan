@@ -1030,7 +1030,7 @@ Object.assign(flashcardData, {
     },
   ],
 
-    "Topic Interview": [
+  "Topic Interview": [
     {
       number: 1,
       topic: "Wearing Personal Protective Equipment",
@@ -1128,8 +1128,1359 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      number: 2,
+      topic: "Checking Emergency Exits and Evacuation Routes",
+      questions: [
+        {
+          korean: "비상구가 무엇인가요?",
+          meaning: "What is an emergency exit?",
+          important: true,
+          answers: [
+            {
+              korean: "화재, 지진 등 갑작스러운 사고가 일어났을 때 대피하는 출입구입니다.",
+              meaning: "An emergency exit is an exit provided so people can escape quickly during a sudden emergency such as a fire or earthquake.",
+            },
+          ],
+        },
+        {
+          korean: "대피로는 무엇인가요?",
+          meaning: "What is an evacuation route?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 대피하는 이동 경로입니다.",
+              meaning: "A route for safe evacuation.",
+            },
+          ],
+        },
+        {
+          korean: "비상구 등 대피로는 왜 확인해야 할까요?",
+          meaning: "Why should we check emergency exits and evacuation routes?",
+          important: true,
+          answers: [
+            {
+              korean: "사고 시 빨리 대피하기 위해서입니다.",
+              meaning: "So we can evacuate quickly during an accident.",
+            },
+          ],
+        },
+        {
+          korean: "소화기란 무엇이며 소화기의 색상은 어떻게 되나요?",
+          meaning: "What is a fire extinguisher, and what color is it?",
+          important: true,
+          answers: [
+            {
+              korean: "불을 끄는 도구이며 보통 붉은색입니다.",
+              meaning: "A fire extinguisher puts out fires and is usually red.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 3,
+      topic: "Checking Safety and Health Signs",
+      questions: [
+        {
+          korean: "안전보건표지가 무엇인가요?",
+          meaning: "What is a safety and health sign?",
+          important: true,
+          answers: [
+            {
+              korean: "위험을 알리고 안전한 행동을 안내하는 표지입니다.",
+              meaning: "Signs that warn of danger and guide safe behavior.",
+            },
+          ],
+        },
+        {
+          korean: "안전보건표지에는 어떤 종류가 있을까요?",
+          meaning: "What types of safety and health signs are there?",
+          important: true,
+          answers: [
+            {
+              korean: "금지, 경고, 지시, 안내표지가 있습니다.",
+              meaning: "Prohibition, warning, mandatory, and information signs.",
+            },
+          ],
+        },
+        {
+          korean: "안전보건표지를 왜 확인해야 할까요?",
+          meaning: "Why should we check safety and health signs?",
+          important: true,
+          answers: [
+            {
+              korean: "위험을 빨리 알 수 있기 때문입니다.",
+              meaning: "To recognize hazards quickly.",
+            },
+          ],
+        },
+        {
+          korean: "위험장소 출입금지 등 금지표지는 무슨 색인가요?",
+          meaning: "What color are prohibition signs, such as No Entry signs?",
+          important: true,
+          answers: [
+            {
+              korean: "붉은색 원과 사선으로 표시합니다.",
+              meaning: "A red circle with a diagonal slash.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 4,
+      topic: "Checking That Safety Devices Work Properly",
+      questions: [
+        {
+          korean: "방호장치가 무엇인가요?",
+          meaning: "What is a safety device?",
+          important: true,
+          answers: [
+            {
+              korean: "기계의 위험으로부터 작업자를 보호하는 장치입니다.",
+              meaning: "A device that protects workers from machine hazards.",
+            },
+          ],
+        },
+        {
+          korean: "정상 작동이 무슨 뜻인가요?",
+          meaning: "What does proper operation mean?",
+          important: true,
+          answers: [
+            {
+              korean: "기계가 안전하고 정확하게 작동하는 것입니다.",
+              meaning: "The machine works safely and correctly.",
+            },
+          ],
+        },
+        {
+          korean: "방호장치 정상 작동 여부를 왜 확인하여야 하나요?",
+          meaning: "Why should we check whether safety devices are working properly?",
+          important: true,
+          answers: [
+            {
+              korean: "사고를 막기 위해서입니다.",
+              meaning: "To prevent accidents.",
+            },
+          ],
+        },
+        {
+          korean: "작업 전 안전점검이 무엇인가요?",
+          meaning: "What is a pre-work safety inspection?",
+          important: true,
+          answers: [
+            {
+              korean: "작업 전에 기계를 점검하고 이상이 있으면 보고합니다.",
+              meaning: "Check the machine before work and report any problems.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 5,
+      topic: "Checking Chemical Safety Data Sheets (MSDS)",
+      questions: [
+        {
+          korean: "화학물질이 무엇인가요?",
+          meaning: "What are chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "사람에게 해롭거나 위험할 수 있는 물질입니다.",
+              meaning: "A substance that may harm people or cause danger.",
+            },
+          ],
+        },
+        {
+          korean: "MSDS(물질안전보건자료)가 무엇인가요?",
+          meaning: "What is an MSDS (Material Safety Data Sheet)?",
+          important: true,
+          answers: [
+            {
+              korean: "화학물질의 위험성과 안전한 사용법을 알려주는 자료입니다.",
+              meaning: "A sheet explaining chemical hazards and safe handling.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질MSDS(물질안전보건자료)를 왜 확인해야 할까요?",
+          meaning: "Why do we need to check the MSDS for chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "화학물질 사고를 예방하기 위해서입니다.",
+              meaning: "To prevent chemical accidents.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질을 사용하는 작업 전에는 어떤 보호구를 준비해야 하나요?",
+          meaning: "What protective equipment should we prepare before working with chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "방독마스크와 화학물질용 보호장갑을 준비합니다.",
+              meaning: "Prepare a respirator and chemical-resistant gloves.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 6,
+      topic: "Ventilating Confined Spaces Before Work",
+      questions: [
+        {
+          korean: "밀폐공간이 무엇인가요?",
+          meaning: "What is a confined space?",
+          important: true,
+          answers: [
+            {
+              korean: "공기가 잘 통하지 않아 위험할 수 있는 공간입니다.",
+              meaning: "A space with poor airflow that may be dangerous.",
+            },
+          ],
+        },
+        {
+          korean: "환기가 무슨 뜻인가요?",
+          meaning: "What does ventilation mean?",
+          important: true,
+          answers: [
+            {
+              korean: "더러운 공기를 깨끗한 공기로 바꾸는 것입니다.",
+              meaning: "Replacing dirty air with fresh air.",
+            },
+          ],
+        },
+        {
+          korean: "밀폐공간 작업 전 왜 환기를 해야 할까요?",
+          meaning: "Why must we ventilate a confined space before working in it?",
+          important: true,
+          answers: [
+            {
+              korean: "유해가스와 산소 부족으로 인한 사고를 막기 위해서입니다.",
+              meaning: "To prevent harm from toxic gases or low oxygen.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: 7,
+      topic: "Do Not Repair Machines While They Are Running",
+      questions: [
+        {
+          korean: "가동이 무슨 뜻인가요?",
+          meaning: "What does operating mean?",
+          important: true,
+          answers: [
+            {
+              korean: "기계나 설비를 작동시키는 것입니다.",
+              meaning: "Running a machine or equipment.",
+            },
+          ],
+        },
+        {
+          korean: "정비가 무슨 뜻인가요?",
+          meaning: "What does maintenance mean?",
+          important: true,
+          answers: [
+            {
+              korean: "기계를 점검하고 수리하는 것입니다.",
+              meaning: "Checking and repairing machinery.",
+            },
+          ],
+        },
+        {
+          korean: "가동 중인 기계를 왜 정비하면 안 될까요?",
+          meaning: "Why must we not maintain a machine while it is running?",
+          important: true,
+          answers: [
+            {
+              korean: "갑자기 움직여 다칠 수 있기 때문입니다.",
+              meaning: "Because sudden movement can cause injury.",
+            },
+          ],
+        },
+        {
+          korean: "기계가 알 수 없는 이유로 멈추면 어떻게 해야 하나요?",
+          meaning: "What should you do if a machine stops for an unknown reason?",
+          important: true,
+          answers: [
+            {
+              korean: "함부로 조작하지 말고 관리자에게 보고합니다.",
+              meaning: "Do not touch it; report it to a supervisor.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: 8,
+      topic: "Do Not Operate Unfamiliar Machines Without Permission",
+      questions: [
+        {
+          korean: "모르는 기계가 무슨 뜻인가요?",
+          meaning: "What is an unfamiliar machine?",
+          important: true,
+          answers: [
+            {
+              korean: "사용법을 잘 모르는 기계입니다.",
+              meaning: "A machine whose operation we do not know.",
+            },
+          ],
+        },
+        {
+          korean: "임의 조작이 무슨 뜻인가요?",
+          meaning: "What does unauthorized operation mean?",
+          important: true,
+          answers: [
+            {
+              korean: "허가 없이 마음대로 조작하는 것입니다.",
+              meaning: "Operating it without permission.",
+            },
+          ],
+        },
+        {
+          korean: "모르는 기계를 왜 임의로 조작하면 안 될까요?",
+          meaning: "Why should you not operate an unfamiliar machine on your own?",
+          important: true,
+          answers: [
+            {
+              korean: "예상하지 못한 사고가 날 수 있기 때문입니다.",
+              meaning: "Because unexpected accidents can happen.",
+            },
+          ],
+        },
+        {
+          korean: "비상정지장치가 무엇인지 아나요?",
+          meaning: "Do you know what an emergency stop device is?",
+          important: true,
+          answers: [
+            {
+              korean: "위험할 때 기계를 즉시 멈추는 장치입니다.",
+              meaning: "A device that stops a machine immediately in danger.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: 9,
+      topic: "Do Not Remove or Disable Safety Devices",
+      questions: [
+        {
+          korean: "안전장치·시설이 무엇인지 알고 있나요?",
+          meaning: "Do you know what safety devices and safety facilities are?",
+          important: true,
+          answers: [
+            {
+              korean: "작업자를 사고로부터 보호하는 장치입니다.",
+              meaning: "Devices that protect workers from accidents.",
+            },
+          ],
+        },
+        {
+          korean: "해체·해지가 무슨 뜻인지 알고 있나요?",
+          meaning: "Do you know what removing or disabling means?",
+          important: true,
+          answers: [
+            {
+              korean: "장치를 떼거나 안전기능을 끄는 것입니다.",
+              meaning: "Removing a device or disabling its safety function.",
+            },
+          ],
+        },
+        {
+          korean: "안전장치·시설을 왜 해체·해지하면 안될까요?",
+          meaning: "Why must safety devices and facilities not be removed or disabled?",
+          important: true,
+          answers: [
+            {
+              korean: "사고를 막을 수 없기 때문입니다.",
+              meaning: "Because it may no longer prevent accidents.",
+            },
+          ],
+        },
+        {
+          korean: "기계의 안전장치를 해체하고 작업하면 어떤 위험이 있나요?",
+          meaning: "What danger is there if you work after removing a machine's safety device?",
+          important: true,
+          answers: [
+            {
+              korean: "기계에 손이나 몸이 끼일 수 있습니다.",
+              meaning: "Hands or body parts can get caught in the machine.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 10,
+      topic: "Using Designated Tools and Accessories",
+      questions: [
+        {
+          korean: "지정이 무슨 뜻인지 알고 있나요?",
+          meaning: "Do you know what designated means?",
+          important: true,
+          answers: [
+            {
+              korean: "공식적으로 정해 놓는 것입니다.",
+              meaning: "Something officially designated.",
+            },
+          ],
+        },
+        {
+          korean: "보조 도구·공구가 무엇인가요?",
+          meaning: "What are auxiliary tools and equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 작업하도록 돕는 도구입니다.",
+              meaning: "Tools that help us work safely.",
+            },
+          ],
+        },
+        {
+          korean: "작업 시 왜 지정된 보조 도구·공구를 사용해야 할까요?",
+          meaning: "Why should you use the designated tools and equipment for a job?",
+          important: true,
+          answers: [
+            {
+              korean: "잘못 사용하면 사고가 날 수 있기 때문입니다.",
+              meaning: "Because improper tools may cause accidents.",
+            },
+          ],
+        },
+        {
+          korean: "기계 작업 시 보조 도구를 사용하는 이유를 알고 있나요?",
+          meaning: "Do you know why auxiliary tools are used when operating machines?",
+          important: true,
+          answers: [
+            {
+              korean: "손이 끼이는 사고 등을 막기 위해서입니다.",
+              meaning: "To prevent hands from getting caught.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 11,
+      topic: "Wearing a Seat Belt and Maintaining Visibility on a Forklift",
+      questions: [
+        {
+          korean: "지게차가 무엇인가요?",
+          meaning: "What is a forklift?",
+          important: true,
+          answers: [
+            {
+              korean: "무거운 물건을 들어 옮기는 기계입니다.",
+              meaning: "A machine for lifting and moving heavy loads.",
+            },
+          ],
+        },
+        {
+          korean: "안전벨트가 무엇인가요?",
+          meaning: "What is a seat belt?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자를 보호하는 벨트입니다.",
+              meaning: "A belt that protects the driver.",
+            },
+          ],
+        },
+        {
+          korean: "시야 확보는 무슨 뜻일까요?",
+          meaning: "What does maintaining visibility mean?",
+          important: true,
+          answers: [
+            {
+              korean: "앞뒤와 주변을 잘 확인하는 것입니다.",
+              meaning: "Checking the front, back, and surroundings clearly.",
+            },
+          ],
+        },
+        {
+          korean: "지게차 운전 시 왜 안전벨트를 착용하고 시야를 확보 해야 할까요?",
+          meaning: "Why must forklift drivers wear seat belts and maintain clear visibility?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자와 동료의 사고를 막기 위해서입니다.",
+              meaning: "To prevent accidents involving the driver and coworkers.",
+            },
+          ],
+        },
+        {
+          korean: "지게차를 운전할 수 있나요? 지게차는 누가 운전할 수 있나요?",
+          meaning: "Can you operate a forklift? Who is allowed to operate one?",
+          important: true,
+          answers: [
+            {
+              korean: "자격이 있는 사람만 운전할 수 있습니다.",
+              meaning: "Only qualified people may drive it.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: 12,
+      topic: "Working in Pairs for Dangerous Tasks",
+      questions: [
+        {
+          korean: "위험작업이 무엇인가요?",
+          meaning: "What is dangerous work?",
+          important: true,
+          answers: [
+            {
+              korean: "사고 위험이 높은 작업입니다.",
+              meaning: "Work with a high risk of accidents.",
+            },
+          ],
+        },
+        {
+          korean: "2인1조 작업이 무엇인가요?",
+          meaning: "What does working in pairs mean?",
+          important: true,
+          answers: [
+            {
+              korean: "두 사람이 함께 작업하는 것입니다.",
+              meaning: "Two people working together.",
+            },
+          ],
+        },
+        {
+          korean: "위험작업은 왜 2인1조로 해야 할까요?",
+          meaning: "Why should dangerous work be done in pairs?",
+          important: true,
+          answers: [
+            {
+              korean: "서로 확인하고 사고 시 바로 도울 수 있기 때문입니다.",
+              meaning: "So they can watch out for each other and help quickly.",
+            },
+          ],
+        },
+        {
+          korean: "사다리 위에서 혼자 작업할 수 있나요?",
+          meaning: "Can you work alone on a ladder?",
+          important: true,
+          answers: [
+            {
+              korean: "혼자 하면 안 됩니다. 다른 사람이 사다리를 잡아줘야 합니다.",
+              meaning: "No. Another person must hold the ladder.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 13,
+      topic: "Do Not Enter Heavy-Equipment Work Zones",
+      questions: [
+        {
+          korean: "중장비가 무엇인가요?",
+          meaning: "What is heavy equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "땅을 파거나 무거운 것을 옮기는 큰 기계입니다.",
+              meaning: "Large machinery for digging or moving heavy materials.",
+            },
+          ],
+        },
+        {
+          korean: "작업구역이 무엇인가요?",
+          meaning: "What is a work zone?",
+          important: true,
+          answers: [
+            {
+              korean: "작업이 이루어지는 구역입니다.",
+              meaning: "An area where work takes place.",
+            },
+          ],
+        },
+        {
+          korean: "중장비 작업구역은 왜 접근 금지 할까요?",
+          meaning: "Why is entry into a heavy-equipment work zone prohibited?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자의 사각지대 때문에 위험하기 때문입니다.",
+              meaning: "Because the driver may not see people in blind spots.",
+            },
+          ],
+        },
+        {
+          korean: "근처에서 중장비가 작업을 하고 있으면 어떻게 해야 하나요?",
+          meaning: "What should you do if heavy equipment is operating nearby?",
+          important: true,
+          answers: [
+            {
+              korean: "작업구역에 접근하지 않아야 합니다.",
+              meaning: "Stay away from the work area.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 14,
+      topic: "No Flames or Sparks Near Flammable Materials",
+      questions: [
+        {
+          korean: "화재가 무엇인지 알고 있나요?",
+          meaning: "Do you know what a fire is?",
+          important: true,
+          answers: [
+            {
+              korean: "물건이 불에 타는 것입니다.",
+              meaning: "When materials catch fire and burn.",
+            },
+          ],
+        },
+        {
+          korean: "화기가 무엇인지 알고 있나요?",
+          meaning: "Do you know what an ignition source is?",
+          important: true,
+          answers: [
+            {
+              korean: "불꽃이나 열을 발생시키는 도구입니다.",
+              meaning: "Tools that produce flames, sparks, or heat.",
+            },
+          ],
+        },
+        {
+          korean: "화재 가능 물질 주변에서 왜 화기를 금지 할까요?",
+          meaning: "Why are flames and sparks prohibited near flammable materials?",
+          important: true,
+          answers: [
+            {
+              korean: "불이 날 수 쉽기 때문입니다.",
+              meaning: "Because it easily start a fire.",
+            },
+          ],
+        },
+        {
+          korean: "불에 잘 타는 물건이 근처에 있으면 용접작업 전에 어떻게 해야 하나요?",
+          meaning: "What should you do before welding if there are flammable objects nearby?",
+          important: true,
+          answers: [
+            {
+              korean: "불에 잘 타는 물건을 먼저 치워야 합니다.",
+              meaning: "Remove flammable items first.",
+            },
+          ],
+        },
+        {
+          korean: "불이 났을 때는 어떻게 해야 하나요?",
+          meaning: "What should you do if a fire breaks out?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 끌 수 있으면 소화기를 사용하고, 아니면 대피합니다.",
+              meaning: "Use an extinguisher only if safe; otherwise evacuate.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 15,
+      topic: "Operating Ventilation When Working with Chemicals",
+      questions: [
+        {
+          korean: "화학물질이 무엇인가요?",
+          meaning: "What are chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "사람에게 해롭거나 위험할 수 있는 물질입니다.",
+              meaning: "A substance that may be harmful or dangerous.",
+            },
+          ],
+        },
+        {
+          korean: "환기장치가 무엇인가요?",
+          meaning: "What is a ventilation system?",
+          important: true,
+          answers: [
+            {
+              korean: "유해한 공기를 빼고 신선한 공기를 넣는 장치입니다.",
+              meaning: "A system that removes harmful air and brings in fresh air.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질 취급 시 왜 환기장치를 가동해야 할까요?",
+          meaning: "Why should ventilation be running when handling chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "유해가스나 먼지를 밖으로 배출하기 위해서입니다.",
+              meaning: "To remove harmful gas and dust.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질을 다룰 때는 어떻게 해야 하나요?",
+          meaning: "What should you do when handling chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "환기장치를 켜고 보호구를 착용해야 합니다.",
+              meaning: "Turn on ventilation and wear protective equipment.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 16,
+      topic: "Do Not Enter Restricted Areas Without Permission",
+      questions: [
+        {
+          korean: "통제 구역이 무엇인가요?",
+          meaning: "What is a restricted area?",
+          important: true,
+          answers: [
+            {
+              korean: "위험요인이 있거나 사고 발는 공간입니다.",
+              meaning: "A restricted area is a place where hazards are present or accidents may occur.",
+            },
+          ],
+        },
+        {
+          korean: "허가가 무슨 뜻인가요?",
+          meaning: "What does permission mean?",
+          important: true,
+          answers: [
+            {
+              korean: "작업이나 출입을 승인하는 것입니다.",
+              meaning: "Permission to perform work or enter.",
+            },
+          ],
+        },
+        {
+          korean: "통제구역은 왜 허가 없이 출입 금지 할까요?",
+          meaning: "Why must you not enter restricted areas without permission?",
+          important: true,
+          answers: [
+            {
+              korean: "안전조치 없이 들어가면 위험하기 때문입니다.",
+              meaning: "Because entering without safety measures is dangerous.",
+            },
+          ],
+        },
+        {
+          korean: "출입 금지라는 뜻을 알고 있나요?",
+          meaning: "Do you know what No Entry means?",
+          important: true,
+          answers: [
+            {
+              korean: "허가 없이 들어가면 안 된다는 뜻입니다.",
+              meaning: "It means entry is not allowed without permission.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 17,
+      topic: "Lift Heavy Objects Using Your Legs, Not Your Back",
+      questions: [
+        {
+          korean: "중량물이 무엇인지 알고 있나요?",
+          meaning: "Do you know what a heavy load is?",
+          important: true,
+          answers: [
+            {
+              korean: "들거나 옮기기 어려운 무거운 물건입니다.",
+              meaning: "A heavy object that is difficult to lift or move.",
+            },
+          ],
+        },
+        {
+          korean: "중량물 들기는 왜 허리 펴고 다리힘을 이용해야 할까요?",
+          meaning: "Why should you keep your back straight and use your legs when lifting heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "허리 부상을 막기 위해서입니다.",
+              meaning: "To avoid injuring our back.",
+            },
+          ],
+        },
+        {
+          korean: "무거운 물건은 어떻게 들어야 하나요?",
+          meaning: "How should you lift heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "허리를 펴고 다리 힘으로 들거나 장비를 사용합니다.",
+              meaning: "Keep your back straight, lift with your legs, or use equipment.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 18,
+      topic: "Using Transport Equipment for Heavy Loads",
+      questions: [
+        {
+          korean: "운반이 무엇인가요?",
+          meaning: "What does transporting mean?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 다른 장소로 옮기는 것입니다.",
+              meaning: "Moving objects from one place to another.",
+            },
+          ],
+        },
+        {
+          korean: "운반 기구가 무엇인가요?",
+          meaning: "What is transport equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 안전하게 옮기는 도구입니다.",
+              meaning: "Equipment used to move items safely.",
+            },
+          ],
+        },
+        {
+          korean: "중량물 운반 시 왜 운반기구를 활용해야 할까요?",
+          meaning: "Why should we use transport equipment when moving heavy loads?",
+          important: true,
+          answers: [
+            {
+              korean: "허리 부상을 예방하기 위해서입니다.",
+              meaning: "To prevent back injuries.",
+            },
+          ],
+        },
+        {
+          korean: "무거운 물건을 옮길 때에는 어떻게 해야 하나요?",
+          meaning: "What should you do when moving heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "운반기구를 사용해야 합니다.",
+              meaning: "Use transport equipment.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 19,
+      topic: "Using Designated Safe Walkways",
+      questions: [
+        {
+          korean: "이동이 무엇 뜻인가요?",
+          meaning: "What does moving mean?",
+          important: true,
+          answers: [
+            {
+              korean: "한 장소에서 다른 장소로 가는 것입니다.",
+              meaning: "Moving from one place to another.",
+            },
+          ],
+        },
+        {
+          korean: "안전 통로가 무엇인가요?",
+          meaning: "What is a safe walkway?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 이동하도록 마련된 통로입니다.",
+              meaning: "A designated path for safe movement.",
+            },
+          ],
+        },
+        {
+          korean: "이동 시 왜 안전통로를 이용해야 할까요?",
+          meaning: "Why should you use safe walkways when moving around?",
+          important: true,
+          answers: [
+            {
+              korean: "장애물과 기계의 위험을 피하기 위해서입니다.",
+              meaning: "To avoid obstacles and machinery hazards.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 20,
+      topic: "Do Not Use Mobile Phones While Working",
+      questions: [
+        {
+          korean: "작업 중이란 무슨 뜻인가요?",
+          meaning: "What does during work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "업무를 하고 있는 시간입니다.",
+              meaning: "The time when we are performing work.",
+            },
+          ],
+        },
+        {
+          korean: "작업 중 왜 휴대폰을 사용하면 안 될까요?",
+          meaning: "Why should you not use a mobile phone while working?",
+          important: true,
+          answers: [
+            {
+              korean: "주의가 분산되어 사고가 날 수 있기 때문입니다.",
+              meaning: "Because distraction may cause accidents.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 21,
+      topic: "Keeping the Workplace Organized and Clean",
+      questions: [
+        {
+          korean: "정리 정돈이 무슨 뜻인가요?",
+          meaning: "What does organizing and tidying mean?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 제자리에 가지런히 놓는 것입니다.",
+              meaning: "Putting things neatly in their proper places.",
+            },
+          ],
+        },
+        {
+          korean: "청소가 무슨 뜻인가요?",
+          meaning: "What does cleaning mean?",
+          important: true,
+          answers: [
+            {
+              korean: "먼지와 쓰레기 등을 치우는 것입니다.",
+              meaning: "Removing dust, trash, and dirt.",
+            },
+          ],
+        },
+        {
+          korean: "작업장에서 정리 정돈 및 청소 왜 해야 할까요?",
+          meaning: "Why should we organize and clean the workplace?",
+          important: true,
+          answers: [
+            {
+              korean: "넘어지거나 미끄러지는 사고를 막기 위해서입니다.",
+              meaning: "To prevent trips and slips.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 22,
+      topic: "Returning Tools to Their Designated Places",
+      questions: [
+        {
+          korean: "공구가 무엇인가요?",
+          meaning: "What is a tool?",
+          important: true,
+          answers: [
+            {
+              korean: "작업할 때 사용하는 도구입니다.",
+              meaning: "A tool used for work.",
+            },
+          ],
+        },
+        {
+          korean: "지정된 자리는 무슨 뜻인가요?",
+          meaning: "What does designated place mean?",
+          important: true,
+          answers: [
+            {
+              korean: "미리 정해 놓은 장소입니다.",
+              meaning: "A place chosen in advance.",
+            },
+          ],
+        },
+        {
+          korean: "공구를 왜 지정된 자리에 두어야 할까요?",
+          meaning: "Why should tools be kept in their designated places?",
+          important: true,
+          answers: [
+            {
+              korean: "분실과 파손, 사고를 막기 위해서입니다.",
+              meaning: "To prevent loss, damage, and accidents.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 23,
+      topic: "Maintaining Hygiene, Including Washing Hands",
+      questions: [
+        {
+          korean: "위생관리가 무슨 뜻인가요?",
+          meaning: "What does hygiene management mean?",
+          important: true,
+          answers: [
+            {
+              korean: "몸과 작업장을 깨끗하게 관리하는 것입니다.",
+              meaning: "Keeping ourselves and the workplace clean.",
+            },
+          ],
+        },
+        {
+          korean: "손 씻기 등 위생관리를 왜 해야 할까요?",
+          meaning: "Why is hygiene management, such as washing hands, necessary?",
+          important: true,
+          answers: [
+            {
+              korean: "유해물질로 인한 질병을 예방하기 위해서입니다.",
+              meaning: "To prevent illness from harmful substances.",
+            },
+          ],
+        },
+        {
+          korean: "작업 후 밥 먹기 전에 무엇을 해야 하나요?",
+          meaning: "What should you do before eating after work?",
+          important: true,
+          answers: [
+            {
+              korean: "손을 깨끗이 씻어야 합니다.",
+              meaning: "Wash our hands thoroughly.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 24,
+      topic: "Turning Off Power Before Cleaning or Repairing Machines",
+      questions: [
+        {
+          korean: "청소·수리 작업이 무엇인가요?",
+          meaning: "What is cleaning and repair work?",
+          important: true,
+          answers: [
+            {
+              korean: "기계를 청소하거나 고장 난 부분을 수리하는 작업입니다.",
+              meaning: "Cleaning or repairing a machine.",
+            },
+          ],
+        },
+        {
+          korean: "전원 차단이 무슨 뜻인가요?",
+          meaning: "What does disconnecting the power mean?",
+          important: true,
+          answers: [
+            {
+              korean: "기계에 공급되는 전기를 끄는 것입니다.",
+              meaning: "Cutting off the power supply.",
+            },
+          ],
+        },
+        {
+          korean: "청소·수리 작업 시 왜 기계 전원을 차단 해야 할까요?",
+          meaning: "Why should machine power be disconnected before cleaning or repairs?",
+          important: true,
+          answers: [
+            {
+              korean: "기계가 갑자기 움직이는 사고를 막기 위해서입니다.",
+              meaning: "To prevent accidents from sudden machine movement.",
+            },
+          ],
+        },
+        {
+          korean: "기계의 청소·수리 작업 전에는 무엇을 해야 하나요?",
+          meaning: "What must you do before cleaning or repairing a machine?",
+          important: true,
+          answers: [
+            {
+              korean: "기계의 전원을 차단해야 합니다.",
+              meaning: "Turn off and isolate the machine's power.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 25,
+      topic: "Checking for Remaining Embers and Sparks After Hot Work",
+      questions: [
+        {
+          korean: "화기 취급이 무엇인가요?",
+          meaning: "What is hot work?",
+          important: true,
+          answers: [
+            {
+              korean: "불꽃이나 열을 사용하는 작업입니다.",
+              meaning: "Work that uses flames or heat.",
+            },
+          ],
+        },
+        {
+          korean: "불씨·불티가 무엇인가요?",
+          meaning: "What are embers and sparks?",
+          important: true,
+          answers: [
+            {
+              korean: "불씨는 남은 불이고 불티는 작은 불꽃입니다.",
+              meaning: "Embers are remaining fire; sparks are small burning particles.",
+            },
+          ],
+        },
+        {
+          korean: "화기 취급 시 왜 불씨·불티를 확인해야 할까요?",
+          meaning: "Why must you check for embers and sparks after hot work?",
+          important: true,
+          answers: [
+            {
+              korean: "화재를 예방하기 위해서입니다.",
+              meaning: "To prevent a fire.",
+            },
+          ],
+        },
+        {
+          korean: "소화기를 사용할 줄 아나요? 소화기 사용 시 제일 먼저 해야 하는 것은?",
+          meaning: "Do you know how to use a fire extinguisher? What should you do first?",
+          important: true,
+          answers: [
+            {
+              korean: "네. 먼저 안전핀을 뽑습니다.",
+              meaning: "Yes. First, pull the safety pin.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 26,
+      topic: "Evacuating First During a Fire",
+      questions: [
+        {
+          korean: "화재가 무엇인가요?",
+          meaning: "What is a fire?",
+          important: true,
+          answers: [
+            {
+              korean: "불이 나는 사고입니다.",
+              meaning: "An accident involving fire.",
+            },
+          ],
+        },
+        {
+          korean: "대피가 무엇인가요?",
+          meaning: "What is evacuation?",
+          important: true,
+          answers: [
+            {
+              korean: "위험한 곳에서 안전한 곳으로 이동하는 것입니다.",
+              meaning: "Moving from a dangerous place to a safe place.",
+            },
+          ],
+        },
+        {
+          korean: "화재 시 왜 대피가 우선일까요?",
+          meaning: "Why should evacuation come first during a fire?",
+          important: true,
+          answers: [
+            {
+              korean: "생명을 지키는 것이 가장 중요하기 때문입니다.",
+              meaning: "Because protecting life is most important.",
+            },
+          ],
+        },
+        {
+          korean: "119 전화번호를 알고 있나요?",
+          meaning: "Do you know the emergency telephone number 119?",
+          important: true,
+          answers: [
+            {
+              korean: "네, 화재 신고 전화번호는 119입니다.",
+              meaning: "Yes, the emergency number for fire is 119.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 27,
+      topic: "Ask Questions About Work You Do Not Understand",
+      questions: [
+        {
+          korean: "모르는 작업 무슨 뜻인가요?",
+          meaning: "What does unfamiliar work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "작업 방법을 잘 모르거나 교육을 받지 않은 작업입니다.",
+              meaning: "Work you don't know how to do or haven't been trained for.",
+            },
+          ],
+        },
+        {
+          korean: "물어보기가 무슨 뜻인가요?",
+          meaning: "What does asking questions mean?",
+          important: true,
+          answers: [
+            {
+              korean: "모르는 것을 다른 사람에게 물어보는 것입니다.",
+              meaning: "Asking someone about something you don't know.",
+            },
+          ],
+        },
+        {
+          korean: "모르는 작업은 왜 물어봐야 할까요?",
+          meaning: "Why should you ask about work you do not understand?",
+          important: true,
+          answers: [
+            {
+              korean: "작업을 잘 모르면 자신과 동료가 위험해질 수 있기 때문입니다.",
+              meaning: "Because working without proper knowledge can put you and your coworkers in danger.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 28,
+      topic: "Reporting Accident Hazards",
+      questions: [
+        {
+          korean: "사고 위험이 무엇인가요?",
+          meaning: "What is an accident hazard?",
+          important: true,
+          answers: [
+            {
+              korean: "사고가 날 수 있는 위험한 상황입니다.",
+              meaning: "A dangerous situation that could cause an accident.",
+            },
+          ],
+        },
+        {
+          korean: "발견이 무슨 뜻인가요?",
+          meaning: "What does discovering mean?",
+          important: true,
+          answers: [
+            {
+              korean: "숨겨진 위험요인이나 고장, 불량, 이상 상태를 찾아내는 것입니다.",
+              meaning: "Finding hidden hazards, malfunctions, defects, or abnormalities.",
+            },
+          ],
+        },
+        {
+          korean: "사고위험 발견 시 왜 알려줘야 할까요?",
+          meaning: "Why should you report an accident hazard when you find one?",
+          important: true,
+          answers: [
+            {
+              korean: "위험을 발견해도 알리지 않으면 자신과 동료가 위험해질 수 있기 때문입니다.",
+              meaning: "Because not reporting a danger can put you and your coworkers at risk.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 29,
+      topic: "Water, Shade, and Rest During Extreme Heat",
+      questions: [
+        {
+          korean: "폭염이 무엇인가요?",
+          meaning: "What is extreme heat?",
+          important: true,
+          answers: [
+            {
+              korean: "최고기온이 33도 이상인 날이 2일 이상 계속되는 현상입니다.",
+              meaning: "When the temperature reaches 33°C or higher for at least two days in a row.",
+            },
+          ],
+        },
+        {
+          korean: "폭염 시 왜 물, 그늘, 휴식을 해야 할까요?",
+          meaning: "Why do workers need water, shade, and rest during extreme heat?",
+          important: true,
+          answers: [
+            {
+              korean: "더위로 인한 건강 문제를 예방하기 위해서입니다.",
+              meaning: "To prevent heat-related illness.",
+            },
+          ],
+        },
+        {
+          korean: "날씨가 너무 더우면 어떻게 해야 하나요?",
+          meaning: "What should you do when the weather is very hot?",
+          important: true,
+          answers: [
+            {
+              korean: "물을 자주 마시고 그늘에서 자주 휴식을 취합니다.",
+              meaning: "Drink water frequently and take regular breaks in the shade.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 30,
+      topic: "Stop Work and Evacuate When There Is Danger",
+      questions: [
+        {
+          korean: "작업 중지가 무엇인가요?",
+          meaning: "What does stopping work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "위험할 때 일을 멈추는 것입니다.",
+              meaning: "Stopping work when there is danger.",
+            },
+          ],
+        },
+        {
+          korean: "대피가 무슨 뜻인가요?",
+          meaning: "What does evacuation mean?",
+          important: true,
+          answers: [
+            {
+              korean: "안전한 장소로 이동하는 것입니다.",
+              meaning: "Moving to a safe place.",
+            },
+          ],
+        },
+        {
+          korean: "사고 위험 시 왜 작업을 중지하고 대피해야 할까요?",
+          meaning: "Why should you stop work and evacuate when there is a risk of an accident?",
+          important: true,
+          answers: [
+            {
+              korean: "생명과 안전을 지키기 위해서입니다.",
+              meaning: "To protect life and safety.",
+            },
+          ],
+        },
+        {
+          korean: "사고의 위험이 있으면 어떻게 해야 하나요?",
+          meaning: "What should you do if there is a danger of an accident?",
+          important: true,
+          answers: [
+            {
+              korean: "즉시 작업을 멈추고 대피한 후 보고합니다.",
+              meaning: "Stop work, evacuate, and report it immediately.",
+            },
+          ],
+        },
+      ],
+    },
   ],
-  
+
   "Simple Math - Addition (더하기)": [],
   "Simple Math - Subtraction (빼기)": [],
   "Simple Math - Multiplication (곱하기)": [],
