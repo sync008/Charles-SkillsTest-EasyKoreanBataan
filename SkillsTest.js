@@ -280,6 +280,11 @@ const currentCategoryDisplay = document.getElementById(
   "current-category-display",
 );
 
+// Topic navigation buttons (only visible on topic cards)
+const topicNavigation = document.getElementById("topic-navigation");
+const prevTopicBtn = document.getElementById("prev-topic-btn");
+const nextTopicBtn = document.getElementById("next-topic-btn");
+
 // SHUFFLE FUNCTION - Randomizes an array
 function shuffleArray(array) {
   const shuffled = [...array];
@@ -520,10 +525,56 @@ const generatedCategories = {
   "Simple Math - Division (나누기)": generateDivisionCards,
 };
 
+// ===== TOPIC CARDS =====
+// Turns [{ topic, questions: [...] }] into one flashcard per question.
+// Every card remembers its topic, so the cards stay linked and in order.
+function flattenTopics(items, categoryName) {
+  const cards = [];
+
+  items.forEach((t, ti) => {
+    t.questions.forEach((q, qi) => {
+      cards.push({
+        ...q,
+        topicKey: `${categoryName}|${t.topic}`,
+        topicName: t.topic,
+        topicNumber: t.number ?? ti + 1,
+        questionIndex: qi,
+        questionTotal: t.questions.length,
+        previousQuestion: qi > 0 ? t.questions[qi - 1].korean : null,
+      });
+    });
+  });
+
+  return cards;
+}
+
+// Shuffle that moves whole topics around but keeps each topic's questions in order
+function shuffleKeepingTopics(cards) {
+  const groups = [];
+
+  cards.forEach((card) => {
+    const last = groups[groups.length - 1];
+    if (card.topicKey && last && last[0].topicKey === card.topicKey) {
+      last.push(card);
+    } else {
+      groups.push([card]);
+    }
+  });
+
+  return shuffleArray(groups).flat();
+}
+
 // Gets the cards for a category (generated or regular, in original order)
 function getCategoryCards(categoryName) {
   const generator = generatedCategories[categoryName];
-  return generator ? generator() : [...(flashcardData[categoryName] || [])];
+  if (generator) return generator();
+
+  const items = [...(flashcardData[categoryName] || [])];
+
+  // Topic categories hold { topic, questions } objects, so turn them into cards
+  return items.some((item) => item.questions)
+    ? flattenTopics(items, categoryName)
+    : items;
 }
 
 // ===== IMAGE CACHE =====
@@ -714,6 +765,38 @@ async function loadMultipleCategories(categories) {
   displayCard();
 }
 
+// Topic badge + "Question 2 of 5" + star (used on the front and back of topic cards)
+function getTopicBadgeHTML(card) {
+  return `
+    <div class="topic-badge">📘 Topic ${card.topicNumber}: ${card.topicName}</div>
+    <div class="topic-progress">
+      Question ${card.questionIndex + 1} of ${card.questionTotal}
+      ${card.important ? '<span class="topic-star" title="Highlighted in the book">⭐</span>' : ""}
+    </div>
+  `;
+}
+
+// Front of a topic card: badge, "Follows Q1" line, question, note
+function getTopicFrontHTML(card) {
+  return `
+    <div class="topic-front">
+      ${getTopicBadgeHTML(card)}
+      ${card.previousQuestion ? `<div class="topic-follows">Follows Q${card.questionIndex}: ${card.previousQuestion}</div>` : ""}
+      <div class="topic-question">${card.korean}</div>
+      ${card.note ? `<div class="topic-note">(${card.note})</div>` : ""}
+    </div>
+  `;
+}
+
+// Counter text: "Topic 1 of 4 · Question 2 of 5" for topic cards
+function getCounterText(card) {
+  if (!card.topicKey) return `${currentCardIndex + 1} / ${currentCards.length}`;
+
+  const starts = getTopicStarts();
+  const topicPosition = starts.filter((s) => s <= currentCardIndex).length;
+  return `Topic ${topicPosition} of ${starts.length} · Question ${card.questionIndex + 1} of ${card.questionTotal}`;
+}
+
 // STEP 3: DISPLAY A CARD
 function displayCard() {
   const card = currentCards[currentCardIndex];
@@ -813,14 +896,16 @@ function displayCard() {
     }
 
     cardContent.innerHTML = `
-      <div class="card-back">
+      <div class="card-back ${card.topicKey ? "topic-back" : ""}">
         ${sourceCategoryHTML}
         ${chapterBadgeHTML}
+        ${card.topicKey ? getTopicBadgeHTML(card) : ""}
         ${imageHTML}
         <div class="korean">${spokenText}</div>
         ${card.romanization ? `<div class="romanization">${card.romanization}</div>` : ""}
         ${card.meaning ? `<div class="meaning">${card.meaning}</div>` : ""}
         ${usageHTML}
+        ${card.note ? `<div class="topic-note">(${card.note})</div>` : ""}
         ${answerHTML}
         ${breakdownHTML}
         <button class="mark-hard-btn" id="mark-hard-btn">🔴 Mark as Hard</button>
@@ -862,13 +947,17 @@ function displayCard() {
       isAutoPlaying ? () => onAutoPlaySpeechEnd(runId) : null,
     );
   } else {
-    // Show FRONT of card (image cards show only the picture)
-    cardContent.innerHTML = card.image
-      ? `<div class="card-front"><img class="card-image" src="${imgSrc(card)}" alt="Flashcard image"></div>`
-      : `<div class="card-front">${card.korean}</div>`;
+    // Show FRONT of card (topic cards, image cards, or plain text cards)
+    if (card.topicKey) {
+      cardContent.innerHTML = getTopicFrontHTML(card);
+    } else {
+      cardContent.innerHTML = card.image
+        ? `<div class="card-front"><img class="card-image" src="${imgSrc(card)}" alt="Flashcard image"></div>`
+        : `<div class="card-front">${card.korean}</div>`;
+    }
   }
 
-  cardCounter.textContent = `${currentCardIndex + 1} / ${currentCards.length}`;
+  cardCounter.textContent = getCounterText(card);
   updateNavigationButtons();
 }
 
@@ -1084,18 +1173,76 @@ document
     }
   });
 
+// ===== TOPIC NAVIGATION =====
+// Index of the first question of every topic in the current cards
+function getTopicStarts() {
+  const starts = [];
+  currentCards.forEach((card, i) => {
+    if (!card.topicKey) return;
+    if (i === 0 || currentCards[i - 1].topicKey !== card.topicKey) starts.push(i);
+  });
+  return starts;
+}
+
+function isLastQuestionOfTopic() {
+  const card = currentCards[currentCardIndex];
+  if (!card || !card.topicKey) return false;
+  const next = currentCards[currentCardIndex + 1];
+  return !next || next.topicKey !== card.topicKey;
+}
+
+function isFirstQuestionOfTopic() {
+  const card = currentCards[currentCardIndex];
+  if (!card || !card.topicKey) return false;
+  const prev = currentCards[currentCardIndex - 1];
+  return !prev || prev.topicKey !== card.topicKey;
+}
+
+function getNextTopicStart() {
+  return getTopicStarts().find((s) => s > currentCardIndex);
+}
+
+function getPreviousTopicStart() {
+  const before = getTopicStarts().filter((s) => s <= currentCardIndex);
+  return before.length >= 2 ? before[before.length - 2] : undefined;
+}
+
+function goToCard(index) {
+  stopAutoPlay();
+  currentCardIndex = index;
+  isFlipped = false;
+  displayCard();
+}
+
+nextTopicBtn.addEventListener("click", function () {
+  const card = currentCards[currentCardIndex];
+  if (!card || !card.topicKey) return;
+  const target = getNextTopicStart();
+  if (target !== undefined) goToCard(target);
+});
+
+prevTopicBtn.addEventListener("click", function () {
+  const card = currentCards[currentCardIndex];
+  if (!card || !card.topicKey) return;
+  const target = getPreviousTopicStart();
+  if (target !== undefined) goToCard(target);
+});
+
 // STEP 4: UPDATE NAVIGATION BUTTONS
 function updateNavigationButtons() {
-  if (currentCardIndex === 0) {
-    prevBtn.disabled = true;
-  } else {
-    prevBtn.disabled = false;
-  }
+  const card = currentCards[currentCardIndex];
+  const isTopicCard = !!(card && card.topicKey);
 
-  if (currentCardIndex === currentCards.length - 1) {
-    nextBtn.disabled = true;
-  } else {
-    nextBtn.disabled = false;
+  // Next stops on the last question of a topic, Previous stops on the first
+  prevBtn.disabled = currentCardIndex === 0 || isFirstQuestionOfTopic();
+  nextBtn.disabled =
+    currentCardIndex === currentCards.length - 1 || isLastQuestionOfTopic();
+
+  // Topic buttons only show on topic cards
+  topicNavigation.classList.toggle("hidden", !isTopicCard);
+  if (isTopicCard) {
+    prevTopicBtn.disabled = getPreviousTopicStart() === undefined;
+    nextTopicBtn.disabled = getNextTopicStart() === undefined;
   }
 }
 
@@ -1109,7 +1256,7 @@ flashcard.addEventListener("click", function () {
 // STEP 6: PREVIOUS BUTTON
 prevBtn.addEventListener("click", function () {
   stopAutoPlay();
-  if (currentCardIndex > 0) {
+  if (currentCardIndex > 0 && !isFirstQuestionOfTopic()) {
     currentCardIndex--;
     isFlipped = false;
     displayCard();
@@ -1119,12 +1266,14 @@ prevBtn.addEventListener("click", function () {
 // STEP 7: NEXT BUTTON
 nextBtn.addEventListener("click", function () {
   stopAutoPlay();
-  if (currentCardIndex < currentCards.length - 1) {
+  if (currentCardIndex < currentCards.length - 1 && !isLastQuestionOfTopic()) {
     currentCardIndex++;
     isFlipped = false;
     displayCard();
   }
 });
+
+// STEP 8: BACK TO CATEGORIES BUTTON
 
 // STEP 8: BACK TO CATEGORIES BUTTON
 backToCategoriesBtn.addEventListener("click", function () {
@@ -1144,7 +1293,7 @@ backToCategoriesBtn.addEventListener("click", function () {
 // STEP 9: SHUFFLE BUTTON
 shuffleBtn.addEventListener("click", function () {
   stopAutoPlay();
-  currentCards = shuffleArray(currentCards);
+  currentCards = shuffleKeepingTopics(currentCards);
   currentCardIndex = 0;
   isFlipped = false;
   displayCard();
@@ -1247,8 +1396,8 @@ function onAutoPlaySpeechEnd(runId) {
   // Ignore if autoplay was stopped or restarted since this card started
   if (!isAutoPlaying || runId !== autoPlayRunId) return;
 
-  // Last card? We're done.
-  if (currentCardIndex >= currentCards.length - 1) {
+  // Last card (or last question of a topic)? We're done.
+  if (currentCardIndex >= currentCards.length - 1 || isLastQuestionOfTopic()) {
     stopAutoPlay();
     return;
   }
@@ -1350,7 +1499,13 @@ document.addEventListener("keydown", function (e) {
   // Don't hijack arrow keys while typing in the search box
   if (document.activeElement.tagName === "INPUT") return;
 
-  if (e.key === "ArrowRight") {
+    if (e.shiftKey && e.key === "ArrowRight") {
+    e.preventDefault();
+    nextTopicBtn.click(); // jump to the next topic
+  } else if (e.shiftKey && e.key === "ArrowLeft") {
+    e.preventDefault();
+    prevTopicBtn.click(); // jump to the previous topic
+  } else if (e.key === "ArrowRight") {
     e.preventDefault();
     nextBtn.click(); // same action as clicking Next
   } else if (e.key === "ArrowLeft") {

@@ -851,3 +851,80 @@ header p {
     text-align: center;
     padding: 20px;
 }
+
+/* ==========================================================================
+   TOPIC CARDS
+   ========================================================================== */
+.topic-navigation.hidden {
+    display: none;
+}
+
+#card-counter {
+    text-align: center;
+}
+
+.topic-front {
+    width: 100%;
+    text-align: center;
+}
+
+.topic-badge {
+    display: inline-block;
+    background: var(--brand-gradient);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.topic-progress {
+    color: var(--text-muted);
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.topic-star {
+    margin-left: 8px;
+}
+
+.topic-follows {
+    max-width: 90%;
+    margin: 0 auto 20px;
+    padding: 10px 14px;
+    background: var(--surface-alt);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: var(--text-faint);
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.topic-question {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.topic-note {
+    margin-top: 14px;
+    font-size: 0.95em;
+    font-style: italic;
+    color: var(--accent);
+}
+
+.topic-back .korean {
+    font-size: 2em;
+}
+
+.topic-back .meaning {
+    font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+    .topic-question { font-size: 1.5em; }
+    .topic-back .korean { font-size: 1.5em; }
+    .topic-back .meaning { font-size: 1em; }
+}

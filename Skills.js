@@ -1029,6 +1029,107 @@ Object.assign(flashcardData, {
       ],
     },
   ],
+
+    "Topic Interview": [
+    {
+      number: 1,
+      topic: "Wearing Personal Protective Equipment",
+      questions: [
+        {
+          korean: "보호구가 무엇인가요?",
+          meaning: "What is personal protective equipment (PPE)?",
+          important: true,
+          answers: [
+            {
+              korean: "작업 중 위험으로부터 몸을 보호하는 장비입니다.",
+              meaning: "Equipment that protects our body from workplace hazards.",
+            },
+          ],
+        },
+        {
+          korean: "보호구에는 어떤 종류가 있나요?",
+          meaning: "What types of PPE are there?",
+          note: "Choose 1 answer only",
+          important: true,
+          answers: [
+            {
+              korean: "안전모, 안전화, 안전대, 보안면, 귀마개, 방진마스크, 방독마스크, 방열복, 방한복 등이 있습니다.",
+              meaning: "Types of PPE include safety helmets, safety shoes, safety harnesses, face shields, earplugs, dust masks, respirators, heat-resistant clothing, and cold-weather protective clothing.",
+            },
+            {
+              korean: "안전모는 작업자가 물체와 부딪히거나 바닥으로 떨어졌을 때 머리를 보호하는 모자입니다.",
+              meaning: "A safety helmet protects your head if you bump into an object or fall to the ground.",
+            },
+            {
+              korean: "안전화는 떨어지는 공구 또는 뾰족한 물건으로부터 발을 보호하기 위한 신발입니다.",
+              meaning: "Safety shoes protect your feet from falling tools and sharp objects.",
+            },
+            {
+              korean: "안전대는 작업자가 높은 곳에서 바닥으로 떨어지는 것을 막는 장비입니다.",
+              meaning: "A safety harness prevents workers from falling to the ground when working at heights.",
+            },
+            {
+              korean: "보안면은 불꽃이나 날아오는 물체로부터 얼굴과 눈을 보호하기 위한 장비입니다.",
+              meaning: "A face shield protects your face and eyes from sparks or flying objects.",
+            },
+            {
+              korean: "귀마개는 시끄럽고 큰 소리가 나는 장소에서 귀를 보호하기 위한 용품입니다.",
+              meaning: "Earplugs protect your ears in places with loud noise.",
+            },
+            {
+              korean: "방진마스크는 공기 중에 있는 먼지로부터 입과 코를 보호하기 위한 용품입니다.",
+              meaning: "A dust mask protects your mouth and nose from dust in the air.",
+            },
+            {
+              korean: "방독마스크는 공기 중에 있는 화학물질 등으로부터 입과 코를 보호하기 위한 용품입니다.",
+              meaning: "A respirator protects your mouth and nose from airborne chemicals and similar substances.",
+            },
+            {
+              korean: "방열복은 매우 뜨거운 장소에서 열과 불로부터 몸을 보호하기 위한 작업복입니다.",
+              meaning: "Heat-resistant protective clothing protects your body from heat and fire in very hot workplaces.",
+            },
+            {
+              korean: "방한복은 매우 추운 장소에서 몸 온도를 유지하기 위한 보온용 작업복입니다.",
+              meaning: "Cold-weather protective clothing keeps your body warm in very cold workplaces.",
+            },
+          ],
+        },
+        {
+          korean: "보호구를 왜 착용하여야 할까요?",
+          meaning: "Why do we need to wear PPE?",
+          answers: [
+            {
+              korean: "생명과 건강을 지키기 위해서입니다.",
+              meaning: "To protect our life and health.",
+            },
+          ],
+        },
+        {
+          korean: "머리를 보호하기 위해 착용하는 보호구는 무엇인가요?",
+          meaning: "What protective equipment should you wear to protect your head?",
+          important: true,
+          answers: [
+            {
+              korean: "안전모입니다. 턱끈도 조여야 합니다.",
+              meaning: "A safety helmet. We must fasten the chin strap.",
+            },
+          ],
+        },
+        {
+          korean: "높은 장소에서 작업 시 안전모 외에 착용해야 하는 보호구는 무엇인가요?",
+          meaning: "Besides a safety helmet, what else must you wear when working at heights?",
+          important: true,
+          answers: [
+            {
+              korean: "높은 장소에서 작업하는 경우에는 안전대를 착용하고 고리를 체결해야 합니다.",
+              meaning: "When working at heights, wear a safety harness and attach its hook securely to the designated anchorage point.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  
   "Simple Math - Addition (더하기)": [],
   "Simple Math - Subtraction (빼기)": [],
   "Simple Math - Multiplication (곱하기)": [],
