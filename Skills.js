@@ -2480,6 +2480,206 @@ Object.assign(flashcardData, {
       ],
     },
   ],
+    "Tools Usage": [
+    {
+      image: "images/manufacturing/17-electric-drill.png",
+      korean: "전기 드릴",
+      meaning: "Electric Drill",
+      answers: [
+        {
+          korean: "전기를 이용해 나무, 금속, 벽 등에 구멍을 뚫거나 나사를 조이는 공구입니다.",
+          meaning: "A power tool used to drill holes in wood, metal, or walls and tighten screws.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/01-electric-grinder.png",
+      korean: "전기 그라인더",
+      meaning: "Electric Grinder",
+      answers: [
+        {
+          korean: "전기를 이용해 금속이나 돌을 자르거나 표면을 갈고 다듬는 공구입니다.",
+          meaning: "A power tool used to cut metal or stone and grind or smooth surfaces.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/02-screwdriver.png",
+      korean: "드라이버",
+      meaning: "Screwdriver",
+      answers: [
+        {
+          korean: "나사를 조이거나 풀 때 사용하는 공구입니다.",
+          meaning: "A tool used to tighten or loosen screws.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/03-monkey-wrench.png",
+      korean: "몽키 렌치, 조절 렌치",
+      meaning: "Monkey Wrench or Adjustable Wrench",
+      answers: [
+        {
+          korean: "볼트나 너트의 크기에 맞게 입구를 조절하여 조이거나 풀 때 사용하는 공구입니다.",
+          meaning: "An adjustable tool used to tighten or loosen bolts and nuts of different sizes.",
+        },
+      ],
+    },
+    {
+      image: "images/manufacturing/14-spanner.png",
+      korean: "스패너",
+      meaning: "Spanner",
+      answers: [
+        {
+          korean: "볼트나 너트를 조이거나 풀 때 사용하는 공구입니다.",
+          meaning: "A tool used to tighten or loosen bolts and nuts.",
+        },
+      ],
+    },
+    {
+      image: "images/manufacturing/13-socket-wrench.png",
+      korean: "소켓 렌치",
+      meaning: "Socket Wrench",
+      answers: [
+        {
+          korean: "볼트나 너트에 맞는 소켓을 끼워 조이거나 풀 때 사용하는 공구입니다.",
+          meaning: "A tool used to tighten or loosen bolts and nuts using interchangeable sockets.",
+        },
+      ],
+    },
+    {
+      image: "images/manufacturing/15-hexagon-wrench.png",
+      korean: "육각 렌치",
+      meaning: "Hexagon Wrench",
+      answers: [
+        {
+          korean: "육각 구멍이 있는 볼트를 조이거나 풀 때 사용하는 공구입니다.",
+          meaning: "A tool used to tighten or loosen bolts with hexagonal sockets.",
+        },
+      ],
+    },
+        {
+      image: "images/tools-usage/04-longnose-pliers.png",
+      korean: "롱노우즈 플라이어",
+      meaning: "Longnose Pliers",
+      answers: [
+        {
+          korean: "전선이나 작은 부품을 잡거나 구부리고 자를 때 사용하는 공구입니다.",
+          meaning: "A tool used to grip, bend, or cut wires and small parts.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/05-pliers.png",
+      korean: "플라이어",
+      meaning: "Pliers",
+      answers: [
+        {
+          korean: "물체를 잡거나 구부리고 전선을 자를 때 사용하는 공구입니다.",
+          meaning: "A tool used to grip or bend objects and cut wires.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/06-nipper.png",
+      korean: "니퍼",
+      meaning: "Nipper / Cutting Pliers",
+      answers: [
+        {
+          korean: "전선이나 가는 철사를 자를 때 사용하는 공구입니다.",
+          meaning: "A tool used to cut electrical wires or thin metal wires.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/07-scissors.png",
+      korean: "가위",
+      meaning: "Scissors",
+      answers: [
+        {
+          korean: "종이나 천 등을 자를 때 사용하는 도구입니다.",
+          meaning: "A tool used to cut paper, fabric, and other materials.",
+        },
+      ],
+    },
+    {
+      image: "images/manufacturing/04-vernier-calipers.png",
+      korean: "버니어 캘리퍼스",
+      meaning: "Vernier Calipers",
+      answers: [
+        {
+          korean: "물체의 두께, 길이, 안쪽과 바깥쪽 지름, 깊이 등을 정밀하게 측정하는 공구입니다.",
+          meaning: "A precision measuring tool used to measure thickness, length, inside and outside diameters, and depth.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/08-ruler.png",
+      korean: "자, 통치자",
+      meaning: "Ruler",
+      answers: [
+        {
+          korean: "물체의 길이를 재거나 직선을 그을 때 사용하는 도구입니다.",
+          meaning: "A tool used to measure length or draw straight lines.",
+        },
+      ],
+    },
+    {
+      image: "images/manufacturing/30-tapeline.png",
+      korean: "줄자",
+      meaning: "Tape Measure",
+      answers: [
+        {
+          korean: "물체의 길이나 거리를 측정할 때 사용하는 도구입니다.",
+          meaning: "A tool used to measure the length of objects or distances.",
+        },
+      ],
+    },
+        {
+      image: "images/tools-usage/09-cutter.png",
+      korean: "커터칼",
+      meaning: "Cutter or Utility Knife",
+      answers: [
+        {
+          korean: "종이나 상자, 비닐 등을 자를 때 사용하는 도구입니다.",
+          meaning: "A tool used to cut paper, cardboard boxes, plastic sheets, and other materials.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/10-saw.png",
+      korean: "톱",
+      meaning: "Saw",
+      answers: [
+        {
+          korean: "나무나 금속 등을 자를 때 사용하는 공구입니다.",
+          meaning: "A tool used to cut wood, metal, and other materials.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/11-claw-hammer.png",
+      korean: "장도리",
+      meaning: "Claw Hammer",
+      answers: [
+        {
+          korean: "못을 박거나 박힌 못을 뽑을 때 사용하는 공구입니다.",
+          meaning: "A tool used to drive nails into materials or pull out embedded nails.",
+        },
+      ],
+    },
+    {
+      image: "images/tools-usage/12-hammer.png",
+      korean: "망치, 해머",
+      meaning: "Hammer",
+      answers: [
+        {
+          korean: "종이나 천 등을 자를 때 사용하는 도구입니다.",
+          meaning: "A tool used to drive nails or strike objects.",
+        },
+      ],
+    },
+  ],
 
   "Simple Math - Addition (더하기)": [],
   "Simple Math - Subtraction (빼기)": [],
