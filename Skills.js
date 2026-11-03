@@ -2674,7 +2674,7 @@ Object.assign(flashcardData, {
       meaning: "Hammer",
       answers: [
         {
-          korean: "종이나 천 등을 자를 때 사용하는 도구입니다.",
+          korean: "못을 박거나 물체를 두드릴 때 사용하는 공구입니다.",
           meaning: "A tool used to drive nails or strike objects.",
         },
       ],
