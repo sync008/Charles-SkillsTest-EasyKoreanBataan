@@ -3122,5 +3122,166 @@ Object.assign(flashcardData, {
         },
       ],
     },
+        {
+      number: 9,
+      topic: "Do Not Remove or Disable Safety Devices",
+      questions: [
+        {
+          korean: "안전장치·시설이 무엇인지 알고 있나요?",
+          meaning: "Do you know what safety devices and safety facilities are?",
+          important: true,
+          answers: [
+            {
+              korean: "작업자를 사고로부터 보호하는 장치입니다.",
+              meaning: "Devices that protect workers from accidents.",
+            },
+          ],
+        },
+        {
+          korean: "해체·해지가 무슨 뜻인지 알고 있나요?",
+          meaning: "Do you know what removing or disabling means?",
+          important: true,
+          answers: [
+            {
+              korean: "장치를 떼거나 안전기능을 끄는 것입니다.",
+              meaning: "Removing a device or disabling its safety function.",
+            },
+          ],
+        },
+        {
+          korean: "안전장치·시설을 왜 해체·해지하면 안될까요?",
+          meaning: "Why must safety devices and facilities not be removed or disabled?",
+          important: true,
+          answers: [
+            {
+              korean: "사고를 막을 수 없기 때문입니다.",
+              meaning: "Because it may no longer prevent accidents.",
+            },
+          ],
+        },
+        {
+          korean: "기계의 안전장치를 해체하고 작업하면 어떤 위험이 있나요?",
+          meaning: "What danger is there if you work after removing a machine's safety device?",
+          important: true,
+          answers: [
+            {
+              korean: "기계에 손이나 몸이 끼일 수 있습니다.",
+              meaning: "Hands or body parts can get caught in the machine.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 10,
+      topic: "Using Designated Tools and Accessories",
+      questions: [
+        {
+          korean: "지정이 무슨 뜻인지 알고 있나요?",
+          meaning: "Do you know what designated means?",
+          important: true,
+          answers: [
+            {
+              korean: "공식적으로 정해 놓는 것입니다.",
+              meaning: "Something officially designated.",
+            },
+          ],
+        },
+        {
+          korean: "보조 도구·공구가 무엇인가요?",
+          meaning: "What are auxiliary tools and equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 작업하도록 돕는 도구입니다.",
+              meaning: "Tools that help us work safely.",
+            },
+          ],
+        },
+        {
+          korean: "작업 시 왜 지정된 보조 도구·공구를 사용해야 할까요?",
+          meaning: "Why should you use the designated tools and equipment for a job?",
+          important: true,
+          answers: [
+            {
+              korean: "잘못 사용하면 사고가 날 수 있기 때문입니다.",
+              meaning: "Because improper tools may cause accidents.",
+            },
+          ],
+        },
+        {
+          korean: "기계 작업 시 보조 도구를 사용하는 이유를 알고 있나요?",
+          meaning: "Do you know why auxiliary tools are used when operating machines?",
+          important: true,
+          answers: [
+            {
+              korean: "손이 끼이는 사고 등을 막기 위해서입니다.",
+              meaning: "To prevent hands from getting caught.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 11,
+      topic: "Wearing a Seat Belt and Maintaining Visibility on a Forklift",
+      questions: [
+        {
+          korean: "지게차가 무엇인가요?",
+          meaning: "What is a forklift?",
+          important: true,
+          answers: [
+            {
+              korean: "무거운 물건을 들어 옮기는 기계입니다.",
+              meaning: "A machine for lifting and moving heavy loads.",
+            },
+          ],
+        },
+        {
+          korean: "안전벨트가 무엇인가요?",
+          meaning: "What is a seat belt?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자를 보호하는 벨트입니다.",
+              meaning: "A belt that protects the driver.",
+            },
+          ],
+        },
+        {
+          korean: "시야 확보는 무슨 뜻일까요?",
+          meaning: "What does maintaining visibility mean?",
+          important: true,
+          answers: [
+            {
+              korean: "앞뒤와 주변을 잘 확인하는 것입니다.",
+              meaning: "Checking the front, back, and surroundings clearly.",
+            },
+          ],
+        },
+        {
+          korean: "지게차 운전 시 왜 안전벨트를 착용하고 시야를 확보 해야 할까요?",
+          meaning: "Why must forklift drivers wear seat belts and maintain clear visibility?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자와 동료의 사고를 막기 위해서입니다.",
+              meaning: "To prevent accidents involving the driver and coworkers.",
+            },
+          ],
+        },
+        {
+          korean: "지게차를 운전할 수 있나요? 지게차는 누가 운전할 수 있나요?",
+          meaning: "Can you operate a forklift? Who is allowed to operate one?",
+          important: true,
+          answers: [
+            {
+              korean: "자격이 있는 사람만 운전할 수 있습니다.",
+              meaning: "Only qualified people may drive it.",
+            },
+          ],
+        },
+      ],
+    },
   ]
 });
