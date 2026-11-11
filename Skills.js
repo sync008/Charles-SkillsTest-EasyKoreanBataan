@@ -3283,5 +3283,105 @@ Object.assign(flashcardData, {
         },
       ],
     },
+    {
+      number: 12,
+      topic: "Working in Pairs for Dangerous Tasks",
+      questions: [
+        {
+          korean: "위험작업이 무엇인가요?",
+          meaning: "What is dangerous work?",
+          important: true,
+          answers: [
+            {
+              korean: "사고 위험이 높은 작업입니다.",
+              meaning: "Work with a high risk of accidents.",
+            },
+          ],
+        },
+        {
+          korean: "2인1조 작업이 무엇인가요?",
+          meaning: "What does working in pairs mean?",
+          important: true,
+          answers: [
+            {
+              korean: "두 사람이 함께 작업하는 것입니다.",
+              meaning: "Two people working together.",
+            },
+          ],
+        },
+        {
+          korean: "위험작업은 왜 2인1조로 해야 할까요?",
+          meaning: "Why should dangerous work be done in pairs?",
+          important: true,
+          answers: [
+            {
+              korean: "서로 확인하고 사고 시 바로 도울 수 있기 때문입니다.",
+              meaning: "So they can watch out for each other and help quickly.",
+            },
+          ],
+        },
+        {
+          korean: "사다리 위에서 혼자 작업할 수 있나요?",
+          meaning: "Can you work alone on a ladder?",
+          important: true,
+          answers: [
+            {
+              korean: "혼자 하면 안 됩니다. 다른 사람이 사다리를 잡아줘야 합니다.",
+              meaning: "No. Another person must hold the ladder.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 13,
+      topic: "Do Not Enter Heavy-Equipment Work Zones",
+      questions: [
+        {
+          korean: "중장비가 무엇인가요?",
+          meaning: "What is heavy equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "땅을 파거나 무거운 것을 옮기는 큰 기계입니다.",
+              meaning: "Large machinery for digging or moving heavy materials.",
+            },
+          ],
+        },
+        {
+          korean: "작업구역이 무엇인가요?",
+          meaning: "What is a work zone?",
+          important: true,
+          answers: [
+            {
+              korean: "작업이 이루어지는 구역입니다.",
+              meaning: "An area where work takes place.",
+            },
+          ],
+        },
+        {
+          korean: "중장비 작업구역은 왜 접근 금지 할까요?",
+          meaning: "Why is entry into a heavy-equipment work zone prohibited?",
+          important: true,
+          answers: [
+            {
+              korean: "운전자의 사각지대 때문에 위험하기 때문입니다.",
+              meaning: "Because the driver may not see people in blind spots.",
+            },
+          ],
+        },
+        {
+          korean: "근처에서 중장비가 작업을 하고 있으면 어떻게 해야 하나요?",
+          meaning: "What should you do if heavy equipment is operating nearby?",
+          important: true,
+          answers: [
+            {
+              korean: "작업구역에 접근하지 않아야 합니다.",
+              meaning: "Stay away from the work area.",
+            },
+          ],
+        },
+      ],
+    },
   ]
 });
