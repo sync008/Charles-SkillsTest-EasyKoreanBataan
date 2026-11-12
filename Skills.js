@@ -3383,5 +3383,116 @@ Object.assign(flashcardData, {
         },
       ],
     },
+            {
+      number: 14,
+      topic: "No Flames or Sparks Near Flammable Materials",
+      questions: [
+        {
+          korean: "화재가 무엇인지 알고 있나요?",
+          meaning: "Do you know what a fire is?",
+          important: true,
+          answers: [
+            {
+              korean: "물건이 불에 타는 것입니다.",
+              meaning: "When materials catch fire and burn.",
+            },
+          ],
+        },
+        {
+          korean: "화기가 무엇인지 알고 있나요?",
+          meaning: "Do you know what an ignition source is?",
+          important: true,
+          answers: [
+            {
+              korean: "불꽃이나 열을 발생시키는 도구입니다.",
+              meaning: "Tools that produce flames, sparks, or heat.",
+            },
+          ],
+        },
+        {
+          korean: "화재 가능 물질 주변에서 왜 화기를 금지 할까요?",
+          meaning: "Why are flames and sparks prohibited near flammable materials?",
+          important: true,
+          answers: [
+            {
+              korean: "불이 날 수 쉽기 때문입니다.",
+              meaning: "Because it easily start a fire.",
+            },
+          ],
+        },
+        {
+          korean: "불에 잘 타는 물건이 근처에 있으면 용접작업 전에 어떻게 해야 하나요?",
+          meaning: "What should you do before welding if there are flammable objects nearby?",
+          important: true,
+          answers: [
+            {
+              korean: "불에 잘 타는 물건을 먼저 치워야 합니다.",
+              meaning: "Remove flammable items first.",
+            },
+          ],
+        },
+        {
+          korean: "불이 났을 때는 어떻게 해야 하나요?",
+          meaning: "What should you do if a fire breaks out?",
+          important: true,
+          answers: [
+            {
+              korean: "안전하게 끌 수 있으면 소화기를 사용하고, 아니면 대피합니다.",
+              meaning: "Use an extinguisher only if safe; otherwise evacuate.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 15,
+      topic: "Operating Ventilation When Working with Chemicals",
+      questions: [
+        {
+          korean: "화학물질이 무엇인가요?",
+          meaning: "What are chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "사람에게 해롭거나 위험할 수 있는 물질입니다.",
+              meaning: "A substance that may be harmful or dangerous.",
+            },
+          ],
+        },
+        {
+          korean: "환기장치가 무엇인가요?",
+          meaning: "What is a ventilation system?",
+          important: true,
+          answers: [
+            {
+              korean: "유해한 공기를 빼고 신선한 공기를 넣는 장치입니다.",
+              meaning: "A system that removes harmful air and brings in fresh air.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질 취급 시 왜 환기장치를 가동해야 할까요?",
+          meaning: "Why should ventilation be running when handling chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "유해가스나 먼지를 밖으로 배출하기 위해서입니다.",
+              meaning: "To remove harmful gas and dust.",
+            },
+          ],
+        },
+        {
+          korean: "화학물질을 다룰 때는 어떻게 해야 하나요?",
+          meaning: "What should you do when handling chemicals?",
+          important: true,
+          answers: [
+            {
+              korean: "환기장치를 켜고 보호구를 착용해야 합니다.",
+              meaning: "Turn on ventilation and wear protective equipment.",
+            },
+          ],
+        },
+      ],
+    },
   ]
 });
