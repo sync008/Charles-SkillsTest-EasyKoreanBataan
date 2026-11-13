@@ -1849,7 +1849,7 @@ Object.assign(flashcardData, {
           important: true,
           answers: [
             {
-              korean: "위험요인이 있거나 사고 발는 공간입니다.",
+              korean: "위험요인이 있거나 사고가 발생하는 공간입니다.",
               meaning: "A restricted area is a place where hazards are present or accidents may occur.",
             },
           ],
