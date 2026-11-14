@@ -3583,5 +3583,55 @@ Object.assign(flashcardData, {
         },
       ],
     },
+    {
+      number: 18,
+      topic: "Using Transport Equipment for Heavy Loads",
+      questions: [
+        {
+          korean: "운반이 무엇인가요?",
+          meaning: "What does transporting mean?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 다른 장소로 옮기는 것입니다.",
+              meaning: "Moving objects from one place to another.",
+            },
+          ],
+        },
+        {
+          korean: "운반 기구가 무엇인가요?",
+          meaning: "What is transport equipment?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 안전하게 옮기는 도구입니다.",
+              meaning: "Equipment used to move items safely.",
+            },
+          ],
+        },
+        {
+          korean: "중량물 운반 시 왜 운반기구를 활용해야 할까요?",
+          meaning: "Why should we use transport equipment when moving heavy loads?",
+          important: true,
+          answers: [
+            {
+              korean: "허리 부상을 예방하기 위해서입니다.",
+              meaning: "To prevent back injuries.",
+            },
+          ],
+        },
+        {
+          korean: "무거운 물건을 옮길 때에는 어떻게 해야 하나요?",
+          meaning: "What should you do when moving heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "운반기구를 사용해야 합니다.",
+              meaning: "Use transport equipment.",
+            },
+          ],
+        },
+      ],
+    },
   ]
 });
