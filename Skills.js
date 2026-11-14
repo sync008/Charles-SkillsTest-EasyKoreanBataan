@@ -3494,5 +3494,94 @@ Object.assign(flashcardData, {
         },
       ],
     },
+     {
+      number: 16,
+      topic: "Do Not Enter Restricted Areas Without Permission",
+      questions: [
+        {
+          korean: "통제 구역이 무엇인가요?",
+          meaning: "What is a restricted area?",
+          important: true,
+          answers: [
+            {
+              korean: "위험요인이 있거나 사고가 발생하는 공간입니다.",
+              meaning: "A restricted area is a place where hazards are present or accidents may occur.",
+            },
+          ],
+        },
+        {
+          korean: "허가가 무슨 뜻인가요?",
+          meaning: "What does permission mean?",
+          important: true,
+          answers: [
+            {
+              korean: "작업이나 출입을 승인하는 것입니다.",
+              meaning: "Permission to perform work or enter.",
+            },
+          ],
+        },
+        {
+          korean: "통제구역은 왜 허가 없이 출입 금지 할까요?",
+          meaning: "Why must you not enter restricted areas without permission?",
+          important: true,
+          answers: [
+            {
+              korean: "안전조치 없이 들어가면 위험하기 때문입니다.",
+              meaning: "Because entering without safety measures is dangerous.",
+            },
+          ],
+        },
+        {
+          korean: "출입 금지라는 뜻을 알고 있나요?",
+          meaning: "Do you know what No Entry means?",
+          important: true,
+          answers: [
+            {
+              korean: "허가 없이 들어가면 안 된다는 뜻입니다.",
+              meaning: "It means entry is not allowed without permission.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 17,
+      topic: "Lift Heavy Objects Using Your Legs, Not Your Back",
+      questions: [
+        {
+          korean: "중량물이 무엇인지 알고 있나요?",
+          meaning: "Do you know what a heavy load is?",
+          important: true,
+          answers: [
+            {
+              korean: "들거나 옮기기 어려운 무거운 물건입니다.",
+              meaning: "A heavy object that is difficult to lift or move.",
+            },
+          ],
+        },
+        {
+          korean: "중량물 들기는 왜 허리 펴고 다리힘을 이용해야 할까요?",
+          meaning: "Why should you keep your back straight and use your legs when lifting heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "허리 부상을 막기 위해서입니다.",
+              meaning: "To avoid injuring our back.",
+            },
+          ],
+        },
+        {
+          korean: "무거운 물건은 어떻게 들어야 하나요?",
+          meaning: "How should you lift heavy objects?",
+          important: true,
+          answers: [
+            {
+              korean: "허리를 펴고 다리 힘으로 들거나 장비를 사용합니다.",
+              meaning: "Keep your back straight, lift with your legs, or use equipment.",
+            },
+          ],
+        },
+      ],
+    },
   ]
 });
