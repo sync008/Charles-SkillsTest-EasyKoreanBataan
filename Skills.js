@@ -3672,34 +3672,34 @@ Object.assign(flashcardData, {
         },
       ],
     },
-    //     {
-    //   number: 20,
-    //   topic: "Do Not Use Mobile Phones While Working",
-    //   questions: [
-    //     {
-    //       korean: "작업 중이란 무슨 뜻인가요?",
-    //       meaning: "What does during work mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "업무를 하고 있는 시간입니다.",
-    //           meaning: "The time when we are performing work.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "작업 중 왜 휴대폰을 사용하면 안 될까요?",
-    //       meaning: "Why should you not use a mobile phone while working?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "주의가 분산되어 사고가 날 수 있기 때문입니다.",
-    //           meaning: "Because distraction may cause accidents.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+        {
+      number: 20,
+      topic: "Do Not Use Mobile Phones While Working",
+      questions: [
+        {
+          korean: "작업 중이란 무슨 뜻인가요?",
+          meaning: "What does during work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "업무를 하고 있는 시간입니다.",
+              meaning: "The time when we are performing work.",
+            },
+          ],
+        },
+        {
+          korean: "작업 중 왜 휴대폰을 사용하면 안 될까요?",
+          meaning: "Why should you not use a mobile phone while working?",
+          important: true,
+          answers: [
+            {
+              korean: "주의가 분산되어 사고가 날 수 있기 때문입니다.",
+              meaning: "Because distraction may cause accidents.",
+            },
+          ],
+        },
+      ],
+    },
     //     {
     //   number: 21,
     //   topic: "Keeping the Workplace Organized and Clean",
