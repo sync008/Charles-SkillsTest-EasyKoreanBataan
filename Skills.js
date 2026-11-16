@@ -3700,173 +3700,173 @@ Object.assign(flashcardData, {
         },
       ],
     },
-    //     {
-    //   number: 21,
-    //   topic: "Keeping the Workplace Organized and Clean",
-    //   questions: [
-    //     {
-    //       korean: "정리 정돈이 무슨 뜻인가요?",
-    //       meaning: "What does organizing and tidying mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "물건을 제자리에 가지런히 놓는 것입니다.",
-    //           meaning: "Putting things neatly in their proper places.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "청소가 무슨 뜻인가요?",
-    //       meaning: "What does cleaning mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "먼지와 쓰레기 등을 치우는 것입니다.",
-    //           meaning: "Removing dust, trash, and dirt.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "작업장에서 정리 정돈 및 청소 왜 해야 할까요?",
-    //       meaning: "Why should we organize and clean the workplace?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "넘어지거나 미끄러지는 사고를 막기 위해서입니다.",
-    //           meaning: "To prevent trips and slips.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    //     {
-    //   number: 22,
-    //   topic: "Returning Tools to Their Designated Places",
-    //   questions: [
-    //     {
-    //       korean: "공구가 무엇인가요?",
-    //       meaning: "What is a tool?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "작업할 때 사용하는 도구입니다.",
-    //           meaning: "A tool used for work.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "지정된 자리는 무슨 뜻인가요?",
-    //       meaning: "What does designated place mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "미리 정해 놓은 장소입니다.",
-    //           meaning: "A place chosen in advance.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "공구를 왜 지정된 자리에 두어야 할까요?",
-    //       meaning: "Why should tools be kept in their designated places?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "분실과 파손, 사고를 막기 위해서입니다.",
-    //           meaning: "To prevent loss, damage, and accidents.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    //     {
-    //   number: 23,
-    //   topic: "Maintaining Hygiene, Including Washing Hands",
-    //   questions: [
-    //     {
-    //       korean: "위생관리가 무슨 뜻인가요?",
-    //       meaning: "What does hygiene management mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "몸과 작업장을 깨끗하게 관리하는 것입니다.",
-    //           meaning: "Keeping ourselves and the workplace clean.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "손 씻기 등 위생관리를 왜 해야 할까요?",
-    //       meaning: "Why is hygiene management, such as washing hands, necessary?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "유해물질로 인한 질병을 예방하기 위해서입니다.",
-    //           meaning: "To prevent illness from harmful substances.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "작업 후 밥 먹기 전에 무엇을 해야 하나요?",
-    //       meaning: "What should you do before eating after work?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "손을 깨끗이 씻어야 합니다.",
-    //           meaning: "Wash our hands thoroughly.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    //     {
-    //   number: 24,
-    //   topic: "Turning Off Power Before Cleaning or Repairing Machines",
-    //   questions: [
-    //     {
-    //       korean: "청소·수리 작업이 무엇인가요?",
-    //       meaning: "What is cleaning and repair work?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "기계를 청소하거나 고장 난 부분을 수리하는 작업입니다.",
-    //           meaning: "Cleaning or repairing a machine.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "전원 차단이 무슨 뜻인가요?",
-    //       meaning: "What does disconnecting the power mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "기계에 공급되는 전기를 끄는 것입니다.",
-    //           meaning: "Cutting off the power supply.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "청소·수리 작업 시 왜 기계 전원을 차단 해야 할까요?",
-    //       meaning: "Why should machine power be disconnected before cleaning or repairs?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "기계가 갑자기 움직이는 사고를 막기 위해서입니다.",
-    //           meaning: "To prevent accidents from sudden machine movement.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "기계의 청소·수리 작업 전에는 무엇을 해야 하나요?",
-    //       meaning: "What must you do before cleaning or repairing a machine?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "기계의 전원을 차단해야 합니다.",
-    //           meaning: "Turn off and isolate the machine's power.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+        {
+      number: 21,
+      topic: "Keeping the Workplace Organized and Clean",
+      questions: [
+        {
+          korean: "정리 정돈이 무슨 뜻인가요?",
+          meaning: "What does organizing and tidying mean?",
+          important: true,
+          answers: [
+            {
+              korean: "물건을 제자리에 가지런히 놓는 것입니다.",
+              meaning: "Putting things neatly in their proper places.",
+            },
+          ],
+        },
+        {
+          korean: "청소가 무슨 뜻인가요?",
+          meaning: "What does cleaning mean?",
+          important: true,
+          answers: [
+            {
+              korean: "먼지와 쓰레기 등을 치우는 것입니다.",
+              meaning: "Removing dust, trash, and dirt.",
+            },
+          ],
+        },
+        {
+          korean: "작업장에서 정리 정돈 및 청소 왜 해야 할까요?",
+          meaning: "Why should we organize and clean the workplace?",
+          important: true,
+          answers: [
+            {
+              korean: "넘어지거나 미끄러지는 사고를 막기 위해서입니다.",
+              meaning: "To prevent trips and slips.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 22,
+      topic: "Returning Tools to Their Designated Places",
+      questions: [
+        {
+          korean: "공구가 무엇인가요?",
+          meaning: "What is a tool?",
+          important: true,
+          answers: [
+            {
+              korean: "작업할 때 사용하는 도구입니다.",
+              meaning: "A tool used for work.",
+            },
+          ],
+        },
+        {
+          korean: "지정된 자리는 무슨 뜻인가요?",
+          meaning: "What does designated place mean?",
+          important: true,
+          answers: [
+            {
+              korean: "미리 정해 놓은 장소입니다.",
+              meaning: "A place chosen in advance.",
+            },
+          ],
+        },
+        {
+          korean: "공구를 왜 지정된 자리에 두어야 할까요?",
+          meaning: "Why should tools be kept in their designated places?",
+          important: true,
+          answers: [
+            {
+              korean: "분실과 파손, 사고를 막기 위해서입니다.",
+              meaning: "To prevent loss, damage, and accidents.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 23,
+      topic: "Maintaining Hygiene, Including Washing Hands",
+      questions: [
+        {
+          korean: "위생관리가 무슨 뜻인가요?",
+          meaning: "What does hygiene management mean?",
+          important: true,
+          answers: [
+            {
+              korean: "몸과 작업장을 깨끗하게 관리하는 것입니다.",
+              meaning: "Keeping ourselves and the workplace clean.",
+            },
+          ],
+        },
+        {
+          korean: "손 씻기 등 위생관리를 왜 해야 할까요?",
+          meaning: "Why is hygiene management, such as washing hands, necessary?",
+          important: true,
+          answers: [
+            {
+              korean: "유해물질로 인한 질병을 예방하기 위해서입니다.",
+              meaning: "To prevent illness from harmful substances.",
+            },
+          ],
+        },
+        {
+          korean: "작업 후 밥 먹기 전에 무엇을 해야 하나요?",
+          meaning: "What should you do before eating after work?",
+          important: true,
+          answers: [
+            {
+              korean: "손을 깨끗이 씻어야 합니다.",
+              meaning: "Wash our hands thoroughly.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 24,
+      topic: "Turning Off Power Before Cleaning or Repairing Machines",
+      questions: [
+        {
+          korean: "청소·수리 작업이 무엇인가요?",
+          meaning: "What is cleaning and repair work?",
+          important: true,
+          answers: [
+            {
+              korean: "기계를 청소하거나 고장 난 부분을 수리하는 작업입니다.",
+              meaning: "Cleaning or repairing a machine.",
+            },
+          ],
+        },
+        {
+          korean: "전원 차단이 무슨 뜻인가요?",
+          meaning: "What does disconnecting the power mean?",
+          important: true,
+          answers: [
+            {
+              korean: "기계에 공급되는 전기를 끄는 것입니다.",
+              meaning: "Cutting off the power supply.",
+            },
+          ],
+        },
+        {
+          korean: "청소·수리 작업 시 왜 기계 전원을 차단 해야 할까요?",
+          meaning: "Why should machine power be disconnected before cleaning or repairs?",
+          important: true,
+          answers: [
+            {
+              korean: "기계가 갑자기 움직이는 사고를 막기 위해서입니다.",
+              meaning: "To prevent accidents from sudden machine movement.",
+            },
+          ],
+        },
+        {
+          korean: "기계의 청소·수리 작업 전에는 무엇을 해야 하나요?",
+          meaning: "What must you do before cleaning or repairing a machine?",
+          important: true,
+          answers: [
+            {
+              korean: "기계의 전원을 차단해야 합니다.",
+              meaning: "Turn off and isolate the machine's power.",
+            },
+          ],
+        },
+      ],
+    },
     //     {
     //   number: 25,
     //   topic: "Checking for Remaining Embers and Sparks After Hot Work",
