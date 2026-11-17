@@ -252,7 +252,8 @@ const memorizedCategories = [
   "Safety Hygiene Equipment",
   "Prohibition",
   "Emergency Evac. Route",
-  "Tools Usage"
+  "Tools Usage",
+  "Manufacturing Tools List"
 ];
 
 const categoryDisplayNames = {
