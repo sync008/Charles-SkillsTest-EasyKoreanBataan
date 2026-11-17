@@ -4134,5 +4134,30 @@ Object.assign(flashcardData, {
     //     },
     //   ],
     // },
-  ]
+  ],
+    "Manufacturing Tools List": [
+    // ===== Manufacturing – Upper (상) =====
+    { image: "images/tools-usage/01-electric-grinder.png", korean: "그라인더", meaning: "Grinder", note: "Manufacturing – Upper" },
+    { image: "images/manufacturing-tools/02-safety-cover.png", korean: "방호덮개", meaning: "Safety Cover", note: "Manufacturing – Upper" },
+    { image: "images/manufacturing-tools/03-air-blow-gun.png", korean: "에어건", meaning: "Air Blow Gun", note: "Manufacturing – Upper" },
+    { image: "images/manufacturing-tools/04-hydraulic-pump.png", korean: "유압펌프", meaning: "Hydraulic Pump", note: "Manufacturing – Upper" },
+    { image: "images/manufacturing-tools/05-soldering-iron.png", korean: "인두기", meaning: "Soldering Iron", note: "Manufacturing – Upper" },
+    { image: "images/manufacturing-tools/06-mixer.png", korean: "혼합기", meaning: "Mixer", note: "Manufacturing – Upper" },
+
+    // ===== Manufacturing – Middle (중) =====
+    { image: "images/manufacturing-tools/07-gasket.png", korean: "가스켓", meaning: "Gasket", note: "Manufacturing – Middle" },
+    { image: "images/manufacturing-tools/08-vise.png", korean: "바이스", meaning: "Vise", note: "Manufacturing – Middle" },
+    { image: "images/manufacturing-tools/09-spirit-level.png", korean: "수평기", meaning: "Spirit Level", note: "Manufacturing – Middle" },
+    { image: "images/manufacturing-tools/10-infrared-thermometer.png", korean: "적외선 온도계", meaning: "Infrared Thermometer", note: "Manufacturing – Middle" },
+    { image: "images/manufacturing-tools/11-clamp.png", korean: "클램프", meaning: "Clamp", note: "Manufacturing – Middle" },
+    { image: "images/manufacturing/22-switch.png", korean: "스위치", meaning: "Switch", note: "Manufacturing – Middle" },
+
+    // ===== Manufacturing – Lower (하) =====
+    { image: "images/tools-usage/06-nipper.png", korean: "니퍼", meaning: "Diagonal Cutter", note: "Manufacturing – Lower" },
+    { image: "images/tools-usage/04-longnose-pliers.png", korean: "롱노즈 플라이어", meaning: "Long-nose Pliers", note: "Manufacturing – Lower" },
+    { image: "images/manufacturing-tools/15-electrical-insulation-tape.png", korean: "절연테이프", meaning: "Electrical Insulation Tape", note: "Manufacturing – Lower" },
+    { image: "images/manufacturing-tools/16-cable-tie.png", korean: "케이블타이", meaning: "Cable Tie", note: "Manufacturing – Lower" },
+    { image: "images/manufacturing-tools/17-teflon-tape.png", korean: "테프론 테이프", meaning: "Teflon Tape", note: "Manufacturing – Lower" },
+    { image: "images/tools-usage/05-pliers.png", korean: "플라이어", meaning: "Pliers", note: "Manufacturing – Lower" },
+  ],
 });
