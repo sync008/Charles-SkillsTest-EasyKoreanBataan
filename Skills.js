@@ -3867,145 +3867,145 @@ Object.assign(flashcardData, {
         },
       ],
     },
-    //     {
-    //   number: 25,
-    //   topic: "Checking for Remaining Embers and Sparks After Hot Work",
-    //   questions: [
-    //     {
-    //       korean: "화기 취급이 무엇인가요?",
-    //       meaning: "What is hot work?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "불꽃이나 열을 사용하는 작업입니다.",
-    //           meaning: "Work that uses flames or heat.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "불씨·불티가 무엇인가요?",
-    //       meaning: "What are embers and sparks?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "불씨는 남은 불이고 불티는 작은 불꽃입니다.",
-    //           meaning: "Embers are remaining fire; sparks are small burning particles.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "화기 취급 시 왜 불씨·불티를 확인해야 할까요?",
-    //       meaning: "Why must you check for embers and sparks after hot work?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "화재를 예방하기 위해서입니다.",
-    //           meaning: "To prevent a fire.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "소화기를 사용할 줄 아나요? 소화기 사용 시 제일 먼저 해야 하는 것은?",
-    //       meaning: "Do you know how to use a fire extinguisher? What should you do first?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "네. 먼저 안전핀을 뽑습니다.",
-    //           meaning: "Yes. First, pull the safety pin.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    //     {
-    //   number: 26,
-    //   topic: "Evacuating First During a Fire",
-    //   questions: [
-    //     {
-    //       korean: "화재가 무엇인가요?",
-    //       meaning: "What is a fire?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "불이 나는 사고입니다.",
-    //           meaning: "An accident involving fire.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "대피가 무엇인가요?",
-    //       meaning: "What is evacuation?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "위험한 곳에서 안전한 곳으로 이동하는 것입니다.",
-    //           meaning: "Moving from a dangerous place to a safe place.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "화재 시 왜 대피가 우선일까요?",
-    //       meaning: "Why should evacuation come first during a fire?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "생명을 지키는 것이 가장 중요하기 때문입니다.",
-    //           meaning: "Because protecting life is most important.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "119 전화번호를 알고 있나요?",
-    //       meaning: "Do you know the emergency telephone number 119?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "네, 화재 신고 전화번호는 119입니다.",
-    //           meaning: "Yes, the emergency number for fire is 119.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    //     {
-    //   number: 27,
-    //   topic: "Ask Questions About Work You Do Not Understand",
-    //   questions: [
-    //     {
-    //       korean: "모르는 작업 무슨 뜻인가요?",
-    //       meaning: "What does unfamiliar work mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "작업 방법을 잘 모르거나 교육을 받지 않은 작업입니다.",
-    //           meaning: "Work you don't know how to do or haven't been trained for.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "물어보기가 무슨 뜻인가요?",
-    //       meaning: "What does asking questions mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "모르는 것을 다른 사람에게 물어보는 것입니다.",
-    //           meaning: "Asking someone about something you don't know.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "모르는 작업은 왜 물어봐야 할까요?",
-    //       meaning: "Why should you ask about work you do not understand?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "작업을 잘 모르면 자신과 동료가 위험해질 수 있기 때문입니다.",
-    //           meaning: "Because working without proper knowledge can put you and your coworkers in danger.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+        {
+      number: 25,
+      topic: "Checking for Remaining Embers and Sparks After Hot Work",
+      questions: [
+        {
+          korean: "화기 취급이 무엇인가요?",
+          meaning: "What is hot work?",
+          important: true,
+          answers: [
+            {
+              korean: "불꽃이나 열을 사용하는 작업입니다.",
+              meaning: "Work that uses flames or heat.",
+            },
+          ],
+        },
+        {
+          korean: "불씨·불티가 무엇인가요?",
+          meaning: "What are embers and sparks?",
+          important: true,
+          answers: [
+            {
+              korean: "불씨는 남은 불이고 불티는 작은 불꽃입니다.",
+              meaning: "Embers are remaining fire; sparks are small burning particles.",
+            },
+          ],
+        },
+        {
+          korean: "화기 취급 시 왜 불씨·불티를 확인해야 할까요?",
+          meaning: "Why must you check for embers and sparks after hot work?",
+          important: true,
+          answers: [
+            {
+              korean: "화재를 예방하기 위해서입니다.",
+              meaning: "To prevent a fire.",
+            },
+          ],
+        },
+        {
+          korean: "소화기를 사용할 줄 아나요? 소화기 사용 시 제일 먼저 해야 하는 것은?",
+          meaning: "Do you know how to use a fire extinguisher? What should you do first?",
+          important: true,
+          answers: [
+            {
+              korean: "네. 먼저 안전핀을 뽑습니다.",
+              meaning: "Yes. First, pull the safety pin.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 26,
+      topic: "Evacuating First During a Fire",
+      questions: [
+        {
+          korean: "화재가 무엇인가요?",
+          meaning: "What is a fire?",
+          important: true,
+          answers: [
+            {
+              korean: "불이 나는 사고입니다.",
+              meaning: "An accident involving fire.",
+            },
+          ],
+        },
+        {
+          korean: "대피가 무엇인가요?",
+          meaning: "What is evacuation?",
+          important: true,
+          answers: [
+            {
+              korean: "위험한 곳에서 안전한 곳으로 이동하는 것입니다.",
+              meaning: "Moving from a dangerous place to a safe place.",
+            },
+          ],
+        },
+        {
+          korean: "화재 시 왜 대피가 우선일까요?",
+          meaning: "Why should evacuation come first during a fire?",
+          important: true,
+          answers: [
+            {
+              korean: "생명을 지키는 것이 가장 중요하기 때문입니다.",
+              meaning: "Because protecting life is most important.",
+            },
+          ],
+        },
+        {
+          korean: "119 전화번호를 알고 있나요?",
+          meaning: "Do you know the emergency telephone number 119?",
+          important: true,
+          answers: [
+            {
+              korean: "네, 화재 신고 전화번호는 119입니다.",
+              meaning: "Yes, the emergency number for fire is 119.",
+            },
+          ],
+        },
+      ],
+    },
+        {
+      number: 27,
+      topic: "Ask Questions About Work You Do Not Understand",
+      questions: [
+        {
+          korean: "모르는 작업 무슨 뜻인가요?",
+          meaning: "What does unfamiliar work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "작업 방법을 잘 모르거나 교육을 받지 않은 작업입니다.",
+              meaning: "Work you don't know how to do or haven't been trained for.",
+            },
+          ],
+        },
+        {
+          korean: "물어보기가 무슨 뜻인가요?",
+          meaning: "What does asking questions mean?",
+          important: true,
+          answers: [
+            {
+              korean: "모르는 것을 다른 사람에게 물어보는 것입니다.",
+              meaning: "Asking someone about something you don't know.",
+            },
+          ],
+        },
+        {
+          korean: "모르는 작업은 왜 물어봐야 할까요?",
+          meaning: "Why should you ask about work you do not understand?",
+          important: true,
+          answers: [
+            {
+              korean: "작업을 잘 모르면 자신과 동료가 위험해질 수 있기 때문입니다.",
+              meaning: "Because working without proper knowledge can put you and your coworkers in danger.",
+            },
+          ],
+        },
+      ],
+    },
     //     {
     //   number: 28,
     //   topic: "Reporting Accident Hazards",
