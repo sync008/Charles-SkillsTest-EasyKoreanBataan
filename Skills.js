@@ -4084,56 +4084,56 @@ Object.assign(flashcardData, {
     //     },
     //   ],
     // },
-    //     {
-    //   number: 30,
-    //   topic: "Stop Work and Evacuate When There Is Danger",
-    //   questions: [
-    //     {
-    //       korean: "작업 중지가 무엇인가요?",
-    //       meaning: "What does stopping work mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "위험할 때 일을 멈추는 것입니다.",
-    //           meaning: "Stopping work when there is danger.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "대피가 무슨 뜻인가요?",
-    //       meaning: "What does evacuation mean?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "안전한 장소로 이동하는 것입니다.",
-    //           meaning: "Moving to a safe place.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "사고 위험 시 왜 작업을 중지하고 대피해야 할까요?",
-    //       meaning: "Why should you stop work and evacuate when there is a risk of an accident?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "생명과 안전을 지키기 위해서입니다.",
-    //           meaning: "To protect life and safety.",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       korean: "사고의 위험이 있으면 어떻게 해야 하나요?",
-    //       meaning: "What should you do if there is a danger of an accident?",
-    //       important: true,
-    //       answers: [
-    //         {
-    //           korean: "즉시 작업을 멈추고 대피한 후 보고합니다.",
-    //           meaning: "Stop work, evacuate, and report it immediately.",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+        {
+      number: 30,
+      topic: "Stop Work and Evacuate When There Is Danger",
+      questions: [
+        {
+          korean: "작업 중지가 무엇인가요?",
+          meaning: "What does stopping work mean?",
+          important: true,
+          answers: [
+            {
+              korean: "위험할 때 일을 멈추는 것입니다.",
+              meaning: "Stopping work when there is danger.",
+            },
+          ],
+        },
+        {
+          korean: "대피가 무슨 뜻인가요?",
+          meaning: "What does evacuation mean?",
+          important: true,
+          answers: [
+            {
+              korean: "안전한 장소로 이동하는 것입니다.",
+              meaning: "Moving to a safe place.",
+            },
+          ],
+        },
+        {
+          korean: "사고 위험 시 왜 작업을 중지하고 대피해야 할까요?",
+          meaning: "Why should you stop work and evacuate when there is a risk of an accident?",
+          important: true,
+          answers: [
+            {
+              korean: "생명과 안전을 지키기 위해서입니다.",
+              meaning: "To protect life and safety.",
+            },
+          ],
+        },
+        {
+          korean: "사고의 위험이 있으면 어떻게 해야 하나요?",
+          meaning: "What should you do if there is a danger of an accident?",
+          important: true,
+          answers: [
+            {
+              korean: "즉시 작업을 멈추고 대피한 후 보고합니다.",
+              meaning: "Stop work, evacuate, and report it immediately.",
+            },
+          ],
+        },
+      ],
+    },
   ],
     "Manufacturing Tools List": [
     // ===== Manufacturing – Upper (상) =====
