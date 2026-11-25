@@ -2480,6 +2480,7 @@ Object.assign(flashcardData, {
       ],
     },
   ],
+  
   "Tools Usage": [
     {
       image: "images/manufacturing/17-electric-drill.png",
@@ -2681,12 +2682,64 @@ Object.assign(flashcardData, {
     },
   ],
 
-  "Simple Math - Addition (더하기)": [],
-  "Simple Math - Subtraction (빼기)": [],
-  "Simple Math - Multiplication (곱하기)": [],
-  "Simple Math - Division (나누기)": [],
-
-    "Manufacturing Tools List": [
+  "Additional Work Questions": [
+    {
+      korean: "동료 의견에 반대하면 어떻게 할 거예요?",
+      meaning: "What will you do if you disagree with a coworker's opinion?",
+      answers: [
+        {
+          korean: "동료의 의견에 반대하면 잘 듣고 배려합니다.",
+          meaning: "If I disagree with a coworker's opinion, I will listen carefully and be considerate.",
+        },
+      ],
+    },
+    {
+      korean: "직장에서 좋은 관계를 유지하려면 어떻게 해야 합니까?",
+      meaning: "What should you do to maintain good relationships at work?",
+      answers: [
+        {
+          korean: "동료와 좋은 관계를 유지하려면 친절하게 인사하고 대화를 많이 해야 해요.",
+          meaning: "To maintain a good relationship with coworkers, greet them kindly and talk with them often.",
+        },
+        {
+          korean: "동료와 좋은 관계를 유지하려면 예의를 지키고 배려해야 해요.",
+          meaning: "To maintain a good relationship with coworkers, be respectful and considerate.",
+        },
+      ],
+    },
+    {
+      korean: "동료가 실수하면 어떻게 합니까?",
+      meaning: "What do you do if a coworker makes a mistake?",
+      answers: [
+        {
+          korean: "도와드리고 상사에게 보고합니다.",
+          meaning: "I will help them and report it to my superior.",
+        },
+      ],
+    },
+    {
+      korean: "직장 동료와 갈등이 생기면 어떻게 할 거예요?",
+      meaning: "What will you do if a conflict arises with a coworker?",
+      answers: [
+        {
+          korean: "해결하고 사과합니다.",
+          meaning: "I will resolve it and apologize.",
+        },
+      ],
+    },
+    {
+      korean: "두 가지 방법 중 선택할 때는 어떻게 합니까?",
+      meaning: "What do you do when you have to choose between two methods?",
+      answers: [
+        {
+          korean: "상사에게 보고합니다.",
+          meaning: "I will report to my superior.",
+        },
+      ],
+    },
+  ],
+  
+  "Manufacturing Tools List": [
     // ===== Manufacturing – Upper (상) =====
     { image: "images/tools-usage/01-electric-grinder.png", korean: "그라인더", meaning: "Grinder", note: "Manufacturing – Upper" },
     { image: "images/manufacturing-tools/02-safety-cover.png", korean: "방호덮개", meaning: "Safety Cover", note: "Manufacturing – Upper" },
@@ -2711,4 +2764,9 @@ Object.assign(flashcardData, {
     { image: "images/manufacturing-tools/17-teflon-tape.png", korean: "테프론 테이프", meaning: "Teflon Tape", note: "Manufacturing – Lower" },
     { image: "images/tools-usage/05-pliers.png", korean: "플라이어", meaning: "Pliers", note: "Manufacturing – Lower" },
   ],
+
+  "Simple Math - Addition (더하기)": [],
+  "Simple Math - Subtraction (빼기)": [],
+  "Simple Math - Multiplication (곱하기)": [],
+  "Simple Math - Division (나누기)": [],
 });
